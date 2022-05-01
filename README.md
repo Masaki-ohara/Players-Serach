@@ -17,8 +17,9 @@
 ・ネタバレ防止機能？
 
 # なぜこのサービスを作りたいのか？
-好きな選手の最新情報を簡単に追っかけできたら便利ではないか！
-と感じ実現事態と感じたからです！
+サッカーは常に色々な選手の譲歩が流れているので、
+好きな選手だけ最新情報を簡単に追っかけできたら便利ではないか！
+と感じ実現したいと感じたからです！
 
 # スケジュール
 企画〜技術調査：4/19〆切
@@ -32,4 +33,3 @@ https://www.figma.com/file/LD2FCNcJk4LkqCu2xamYEh/%E3%83%9D%E3%83%BC%E3%83%88%E3
 
 # ER図
 https://drive.google.com/file/d/1v0yCQ-vLWf-7MZiFdXhEGEgzhas1G-6K/view?usp=sharing
-
