@@ -1,0 +1,15 @@
+current directory: /Users/oharamasaki/workspace/Players-Serach/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.11.1/ext/bootsnap
+/Users/oharamasaki/.rbenv/versions/3.1.2/bin/ruby -I /Users/oharamasaki/.rbenv/versions/3.1.2/lib/ruby/site_ruby/3.1.0 -r ./siteconf20220501-82203-i9yuro.rb extconf.rb
+creating Makefile
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.11.1/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.11.1/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.11.1/ext/bootsnap
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20220501-82203-4r8j1c/bootsnap
