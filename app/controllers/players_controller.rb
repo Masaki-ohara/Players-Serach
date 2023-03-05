@@ -1,25 +1,60 @@
 class PlayersController < ApplicationController
-  before_action :set_player, only: %i[ show edit update destroy ]
-  before_action :set_q, only: [:index, :search]
+  require 'uri'
+  require 'net/http'
+  require 'openssl'
+  require 'json'
 
-  def search
-    @players = Players.all
-    if params[:search].present?
-  end
+  #before_action :set_player, only: %i[search]
+  before_action :set_q, only: %i[search]
   
   # GET /players or /players.json
   def index
-    @q = Player.ransack(params[:q])
-    @players = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   # GET /players/1 or /players/1.json
   def show
+    query_string = URI.encode_www_form({ search: params[:player_name], season: params[:season], league: params[:league], })
+    url = URI.parse("https://api-football-v1.p.rapidapi.com/v3/players?#{query_string}")
+    #url = URI.parse("https://api-football-v1.p.rapidapi.com/v3/players?id=#{params[:id]}&season=#{params[:season]}")
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  
+    request = Net::HTTP::Get.new(url)
+    request["x-rapidapi-host"] = 'api-football-v1.p.rapidapi.com'
+    request["x-rapidapi-key"] = 'd303e74938msh00c29368f24eabcp1dc98djsnc0b438abb423'
+    
+    response = http.request(request)
+    puts response.read_body
+    @result = JSON.parse(response.read_body)
+    if @result["response"] != []     
+    @imageURL = @result["response"][0]["player"]["photo"]
+    @player_name = @result["response"][0]["player"]["name"]
+    @season = @result["response"][0]["statistics"][0]["league"]["season"]
+    @team = @result["response"][0]["statistics"][0]["team"]["name"]
+    @age = @result["response"][0]["player"]["age"]
+    @natinality = @result["response"][0]["player"]["nationality"]
+    @games = @result["response"][0]["statistics"][0]["games"]["appearences"]
+    @goal = @result["response"][0]["statistics"][0]["goals"]["total"]
+    @shoots = @result["response"][0]["statistics"][0]["shots"]["total"]
+    @assists  = @result["response"][0]["statistics"][0]["goals"]["assists"]
+    @passes = @result["response"][0]["statistics"][0]["passes"]["total"]
+    @accuracy = @result["response"][0]["statistics"][0]["passes"]["accuracy"]
+    @tackles = @result["response"][0]["statistics"][0]["tackles"]["total"]
+    @blocks = @result["response"][0]["statistics"][0]["tackles"]["blocks"]
+    @interceptions = @result["response"][0]["statistics"][0]["tackles"]["interceptions"]
+    @duels = @result["response"][0]["statistics"][0]["duels"]["total"]
+    @won = @result["response"][0]["statistics"][0]["duels"]["won"]
+    @dribbles = @result["response"][0]["statistics"][0]["dribbles"]["attempts"]
+    @success = @result["response"][0]["statistics"][0]["dribbles"]["success"]
+    @saves = @result["response"][0]["statistics"][0]["goals"]["saves"]
+  else
+    redirect_to search_players_path, alert: "プレイヤー情報が存在しません."
+  end
   end
 
   # GET /players/new
   def new
-    @player = Player.new
   end
 
   # GET /players/1/edit
@@ -50,7 +85,33 @@ class PlayersController < ApplicationController
   end
 
   def search
-    @results = @q.result
+    # if player_name = params[:player_name]
+    #   query_string = URI.encode_www_form({ search: player_name, season: params[:season], league: params[:league], })
+    #   url = URI.parse("https://api-football-v1.p.rapidapi.com/v3/players?#{query_string}")
+    #   http = Net::HTTP.new(url.host, url.port)
+    #   http.use_ssl = true
+    #   http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    
+    #   request = Net::HTTP::Get.new(url)
+    #   request["x-rapidapi-host"] = 'api-football-v1.p.rapidapi.com'
+    #   request["x-rapidapi-key"] = 'd303e74938msh00c29368f24eabcp1dc98djsnc0b438abb423'
+      
+    #   response = http.request(request)
+    #   puts response.read_body
+    #   @result = JSON.parse(response.read_body)
+    #   if @result["response"] != []
+    #    player_id = @result["response"][0]["player"]["id"]
+       #if @result["response"] == 200
+      # redirect_to player_url(@result["response"][0]["player"]["id"])
+      #redirect_to player_url(player_id), params:{'season'  => params[:season], 'league'  => params[:league]}, success: "プレイヤー情報を取得に成功しました."
+      #else
+       # redirect_to search_players_path, notice: "プレイヤー情報が存在しません."
+     #end
+    #end
+    #@player = Player.new
+    #@q = Player.ransack(params[:q])
+    #@players = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
+    #@seasons = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   private
@@ -59,12 +120,20 @@ class PlayersController < ApplicationController
   end
 
     # Use callbacks to share common setup or constraints between actions.
-    def set_player
-      @player = Player.find(params[:id])
-    end
+  def set_player
+    @player = Player.find(params[:player_id])
+  end
 
     # Only allow a list of trusted parameters through.
-    def player_params
-      params.fetch(:player, {})
-    end
+  def player_params
+    params.require(:player).permit(:player_name, :season)
+  end
+
+  def season_params
+    params.require(:season).permit(:season)
+  end
+
+  def search_params
+    params[:q]&.permit(:player_name, :season)
+  end
 end
