@@ -1,4 +1,93 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+   <div class="col-lg-8 offset-lg-2">
 
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>
+<h1>player</h1>
+<div>
+  <table>
+    <tr>
+     <td><%= image_tag @imageURL %></td>
+    </tr>
+    <tr>
+      <td>プレイヤー名</td>
+       <td><%= @player_name %></td>
+    </tr>
+    <tr>
+      <td>西暦</td>
+       <td><%= @season %></td>
+    </tr>
+    <tr>
+      <td>チーム名</td>
+      <td><%= @team %></td>
+    </tr>
+    <tr>
+      <td>現在の年齢</td>
+      <td><%= @age %></td>
+    </tr>
+    <tr>
+    <td>国籍</td>
+    <td><%= @natinality %></td>
+    </tr>
+   <tr>
+    <td>出場試合数</td>
+    <td><%= @games %></td>
+    </tr>
+   <tr>
+    <td>ゴール数</td>
+    <td><%= @goal %></td>
+    </tr>
+   <tr>
+    <td>シュート数</td>
+    <td><%= @shoots %></td>
+    </tr>
+   <tr>
+    <td>アシスト数</td>
+    <td><%= @assists %></td>
+    </tr>
+    <tr>
+    <td>合計パス数</td>
+    <td><%= @passes %></td>
+    </tr>
+    <tr>
+    <td>パス成功率</td>
+    <td><%= @accuracy %></td><td>%</td>
+    </tr>
+    <tr>
+    <td>タックル合計数</td>
+    <td><%= @tackles %></td>
+    </tr>
+    <tr>
+    <td>タックル成功数</td>
+    <td><%= @blocks %></td>
+    </tr>
+    <tr>
+    <td>インターセプト数(パスカット数)</td>
+    <td><%= @interceptions %></td>
+    </tr>
+    <tr>
+    <td>デュエル合計数</td>
+    <td><%= @duels%></td>
+    </tr>
+    <tr>
+    <td>デュエル勝率</td>
+    <td><%= @won %></td>
+    </tr>
+    <tr>
+    <td>ドリブル試行数</td>
+    <td><%= @dribbles %></td>
+    </tr>
+    <tr>
+    <td>ドリブル成功率</td>
+    <td><%= @success %></td>
+    </tr>
+    <tr>
+    <td>シュートセーブ数</td>
+    <td><%= @saves %></td>
+    </tr>
+  </table>
+   </div>
+  </div>
+ </div>
+</div>
+
+<%= link_to 'Back', search_players_path %>

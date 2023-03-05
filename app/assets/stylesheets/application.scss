@@ -16,7 +16,9 @@
  @import "top";
  @import "user_sessions";
  @import "bootstrap"; 
+ @import 'font-awesome';
  @import 'font-awesome-sprockets';
+ @import 'players';
 
  body {
     display: flex;
@@ -29,3 +31,12 @@
       text-align: center;
     }
   }
+
+  .player {
+    display: flex; 
+    flex-flow: column;
+    min-height: 100vh;
+    text-align: center;
+    padding: 40px 40px 40px 40px;
+    margin: 40px 40px 40px 40px;
+}
