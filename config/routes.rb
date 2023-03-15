@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'games/search'
   root 'static_pages#top'
  
   get 'login', to: 'user_sessions#new'
