@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      player: 'プレイヤー'
+    attributes:
+      player:
+        player_name: 'プレイヤー名'
+        season: '西暦'
+        league: 'リーグ名'
+
+

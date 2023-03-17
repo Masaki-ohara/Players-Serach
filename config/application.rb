@@ -32,6 +32,13 @@ module PlayersSerach
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Don't generate system test files.
-    config.generators.system_tests = nil
+      config.time_zone = 'Tokyo'
+      config.active_record.default_timezone = :local
+  
+      #　以下の記述を追記する(設定必須)
+      # デフォルトのlocaleを日本語(:ja)にする
+      config.i18n.default_locale = :ja
+     config.generators.system_tests = nil
+     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
   end
 end
