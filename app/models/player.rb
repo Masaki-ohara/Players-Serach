@@ -1,8 +1,11 @@
 class Player < ApplicationRecord
-  belongs_to :user
+  include ActiveModel::Model
+  #belongs_to :user
 
-  has_many :season
+  attr_accessor :player_name, :season, :league
+  
   validates :player_name, presence: true
   validates :season, presence: true
+  validates :league, presence: true
 end
 
