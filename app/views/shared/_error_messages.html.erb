@@ -1,7 +1,7 @@
-<% if @player.errors.any? %>
+<% if object.errors.any? %>
    <div id="error_messages" class="alert alert-danger">
      <ul class="mb-0">
-       <% @player.errors.full_messages.each do |msg| %>
+       <% object.errors.full_messages.each do |msg| %>
          <li><%= msg %></li>
        <% end %>
      </ul>

@@ -1,18 +1,10 @@
-<div class="top-wrapper">
-  <div class="top-inter-text">
-    <h1>Players-Serach</h1>
-  </div>
-</div>
 
-
- <%
-=begin%>
  <div id="wg-api-football-games"
      data-host="api-football-v1.p.rapidapi.com"
      data-key="d303e74938msh00c29368f24eabcp1dc98djsnc0b438abb423"
      data-date=""
-     data-league="39"
-     data-season="2023"
+     data-league=<%=@league%>
+     data-season=<%=@season%>
      data-theme=""
      data-refresh="15"
      data-show-toolbar="true"
@@ -25,8 +17,4 @@
 <script
     type="module"
     src="https://widgets.api-sports.io/2.0.3/widgets.js">
-</script> 
-
- 
-<%
-=end%>
+</script>  

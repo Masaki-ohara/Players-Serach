@@ -5,7 +5,7 @@ class PlayersController < ApplicationController
   require 'json'
 
   #before_action :set_player, only: %i[search]
-  before_action :set_q, only: %i[search]
+  # before_action :set_q, only: %i[search]
   
   # GET /players or /players.json
   def index
@@ -124,9 +124,9 @@ class PlayersController < ApplicationController
   end
 
   private
-  def set_q
-    @q = User.ransack(params[:q])
-  end
+  # def set_q
+  #   @q = User.ransack(params[:q])
+  # end
 
     # Use callbacks to share common setup or constraints between actions.
   def set_player
@@ -142,7 +142,7 @@ class PlayersController < ApplicationController
     params.require(:season).permit(:season)
   end
 
-  def search_params
-    params[:q]&.permit(:player_name, :season)
-  end
+  # def search_params
+  #   params[:q]&.permit(:player_name, :season)
+  # end
 end
