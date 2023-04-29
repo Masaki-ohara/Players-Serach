@@ -5,7 +5,12 @@ class User < ApplicationRecord
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
+  has_many :favorites, dependent: :destroy 
   validates :email, uniqueness: true
   validates :email, presence: true
   validates :name, presence: true, length: { maximum: 255 }
+  def favorited_by?(player)
+    #player_idを直接持ってきてる
+    favorites.where(player_id: player).exists?
+  end
 end

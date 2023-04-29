@@ -7,11 +7,9 @@ class PlayersController < ApplicationController
   #before_action :set_player, only: %i[search]
   # before_action :set_q, only: %i[search]
   
-  # GET /players or /players.json
   def index
   end
 
-  # GET /players/1 or /players/1.json
   def show
     @player = Player.new(player_name: params[:player_name], season: params[:season], league: params[:league])
     if @player.valid?
@@ -31,6 +29,8 @@ class PlayersController < ApplicationController
     @result = JSON.parse(response.read_body)
     if @result["response"] != []     
       #responseの中身の配列が空じゃなければ検索実行
+      @player_id =  @result["response"][0]["player"]["id"]
+      @league = @result["response"][0]["statistics"][0]["league"]["id"]
       @imageURL = @result["response"][0]["player"]["photo"]
       @player_name = @result["response"][0]["player"]["name"]
       @season = @result["response"][0]["statistics"][0]["league"]["season"]
@@ -53,7 +53,7 @@ class PlayersController < ApplicationController
       @saves = @result["response"][0]["statistics"][0]["goals"]["saves"]
     end
    else
-    #redirect_to search_players_path, 
+    #redirect_to search_players_path
     flash.now[:danger] = "プレイヤー情報が存在しません."
     render :search
   end
@@ -123,6 +123,54 @@ class PlayersController < ApplicationController
     #@seasons = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
+  def favorites
+    # @players = player_id.where(id: player_id = Favorite.where(user_id: current_user.id).select(:player_id))
+    # user = User.find(current_user.id)
+    # #User.find(params[:user_id])
+    # user.favorites = favorites.where(player: player_id)
+    # @favorites = current_user.favorites(user.favorites)
+    #@player = params[:player_id]
+    #@season = params[:season]
+   # @league = params[:league]
+    # fvorite = params(:player_id, :season, :league)
+    #@favorite_players = current_user.favorites.includes(favorite).order(created_at: :desc)
+    @favorite_players = Favorite.where(user_id: current_user.id)
+    @players = []
+    @favorite_players.each do |favorite|
+      puts favorite
+      query_string = URI.encode_www_form({id: favorite.player_id, season: favorite.season, league: favorite.league })
+    url = URI.parse("https://api-football-v1.p.rapidapi.com/v3/players?#{query_string}")
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  
+    request = Net::HTTP::Get.new(url)
+    request["x-rapidapi-host"] = 'api-football-v1.p.rapidapi.com'
+    request["x-rapidapi-key"] = 'd303e74938msh00c29368f24eabcp1dc98djsnc0b438abb423'
+    
+    response = http.request(request)
+    puts response.read_body
+    @result = JSON.parse(response.read_body)
+  
+    if @result["response"] != []   
+      @players.push(@result["response"])
+      # @image_url = []
+      # @player_name = []
+      # @image_url.push(id: favorite.player_id, season: favorite.season, leaggue: favorite.league)
+      # @player_name.push(id: favorite.player_id, season: favorite.season, leaggue: favorite.league)
+      # print 
+      # print @player_name
+      # @imageURL = @["response"][0]["player"]["photo"]
+      # @player_name = @result["response"][0]["player"]["name"]  
+    end
+   end
+   print "選手"
+   print @players
+    #.includes(:user).order(created_at: :desc)
+    # @q = current_user.favorite_players.order('players.created_at DESC').ransack(params[:q])
+    # @favorite_players = @q.result(distinct: true).page(params[:page])
+  end
+
   private
   # def set_q
   #   @q = User.ransack(params[:q])
@@ -142,7 +190,11 @@ class PlayersController < ApplicationController
     params.require(:season).permit(:season)
   end
 
+  def favorites_params
+    params.require(:favorites).permit(:player_name, :season, :league)
+  end 
   # def search_params
   #   params[:q]&.permit(:player_name, :season)
   # end
 end
+

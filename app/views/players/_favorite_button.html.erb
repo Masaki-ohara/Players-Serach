@@ -1,0 +1,14 @@
+<% if current_user.favorited_by?(player) %> 
+
+  <%= link_to favorite_players_path(player_id: player), method: :delete, remote: true do %>
+       <i class="fa-lg fas fa-heart icon-btn liked"></i>
+削除
+<%end%>
+
+<%else%>
+<%= link_to favorite_players_path(player_id: player, season: season, league: league), method: :post, remote: true do %>
+<i class="fa-lg fas fa-heart icon-btn not-favorite"></i>
+いいね
+<% end %>
+ <% end %> 
+
