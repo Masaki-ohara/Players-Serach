@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+  before_action :require_login, only: %i[create destroy]
   require 'uri'
   require 'net/http'
   require 'openssl'
@@ -40,9 +41,21 @@ class FavoritesController < ApplicationController
     #   format.json { head :no_content }
   end
 
+  def not_authenticated
+    redirect_to login_url, alert: 'ログインしてください'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_player
       @player = Favorite.find(params[:player_id])
     end
+
+    # def authenticate
+    #   redirect_to login_path 
+    # end  
+
+    # def logged_in? # <-- 追記するメソッド
+    #   (current_user && current_user[:status] != Settings.user_status_retired)
+    # end
 end

@@ -14,11 +14,11 @@
       <% @players.each do |player| %>
      <tr>
 
- <td><%= image_tag player[0]["player"]["photo"] %></td> 
+      <td><%= image_tag player[0]["player"]["photo"] %></td> 
 
       <td>プレイヤー名</td>
       <td><%= player[0]["player"]["name"] %></td>
- <%= link_to '選手詳細へ', players_path(@result["response"]) %>
+      <%= link_to '選手詳細', players_path(@result["response"]) %>
     </tr>
        <%end%> 
        </div>
