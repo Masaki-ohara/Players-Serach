@@ -1,4 +1,5 @@
 class PlayersController < ApplicationController
+  before_action :require_login, only: %i[favorites]
   require 'uri'
   require 'net/http'
   require 'openssl'
@@ -7,6 +8,11 @@ class PlayersController < ApplicationController
   #before_action :set_player, only: %i[search]
   # before_action :set_q, only: %i[search]
   
+  def not_authenticated
+    flash[:danger] 
+    redirect_to login_path
+  end
+
   def index
   end
 
@@ -134,6 +140,9 @@ class PlayersController < ApplicationController
    # @league = params[:league]
     # fvorite = params(:player_id, :season, :league)
     #@favorite_players = current_user.favorites.includes(favorite).order(created_at: :desc)
+  #  if logged_in?
+  #  else
+  #   redirect_to login_path 
     @favorite_players = Favorite.where(user_id: current_user.id)
     @players = []
     @favorite_players.each do |favorite|
