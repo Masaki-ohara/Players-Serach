@@ -1,8 +1,11 @@
   <div class="row">
     <div class="col-12">
-      <div class="row">
   <div class="w-100"></div>  
-   <div class='mt-3 mb-3'>
+   <%
+=begin%>
+ <div class='mt-3 mb-3'> 
+<%
+=end%>
     <h1>お気に入りした選手</h1>
      <tbody>
      <% if @players.present? %>
@@ -17,8 +20,14 @@
       <td><%= image_tag player[0]["player"]["photo"] %></td> 
 
       <td>プレイヤー名</td>
-      <td><%= player[0]["player"]["name"] %></td>
-      <%= link_to '選手詳細', players_path(@result["response"]) %>
+      <td><%= player[0]["player"]["lastname"] + player[0]["player"]["firstname"]%></td>
+<%= form_with url: players_url, method: :get, local: true do |f| %>
+   <%= f.hidden_field :league, value: player[0]["statistics"][0]["league"]["id"] %>
+  <%= f.hidden_field :season, value: player[0]["statistics"][0]["league"]["season"] %>
+  <%= f.hidden_field :player_name, value: player[0]["player"]["name"] %>
+  <%= f.submit '選手詳細', class: 'btn btn-primary' %>
+
+<%end%>
     </tr>
        <%end%> 
        </div>

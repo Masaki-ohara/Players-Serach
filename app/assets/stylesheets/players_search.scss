@@ -11,4 +11,9 @@
     text-align: center;
     padding: 40px 40px 40px 40px;
     margin: 30px 30px 40px 40px;
+    background-image: url("<%= asset_path('soccer_image.jpg') %>")
 }
+
+// .background {
+//     background-image: image-url('soccer_image_image.jpg');
+//   }

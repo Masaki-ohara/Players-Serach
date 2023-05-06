@@ -9,7 +9,7 @@ class PlayersController < ApplicationController
   # before_action :set_q, only: %i[search]
   
   def not_authenticated
-    flash[:danger] 
+    flash[:danger] ="ログインしてください"
     redirect_to login_path
   end
 
@@ -38,7 +38,8 @@ class PlayersController < ApplicationController
       @player_id =  @result["response"][0]["player"]["id"]
       @league = @result["response"][0]["statistics"][0]["league"]["id"]
       @imageURL = @result["response"][0]["player"]["photo"]
-      @player_name = @result["response"][0]["player"]["name"]
+      @lastname = @result["response"][0]["player"]["lastname"]
+      @firstname = @result["response"][0]["player"]["firstname"]
       @season = @result["response"][0]["statistics"][0]["league"]["season"]
       @team = @result["response"][0]["statistics"][0]["team"]["name"]
       @age = @result["response"][0]["player"]["age"]

@@ -1,5 +1,4 @@
 class FavoritesController < ApplicationController
-  before_action :require_login, only: %i[create destroy]
   require 'uri'
   require 'net/http'
   require 'openssl'
@@ -7,6 +6,7 @@ class FavoritesController < ApplicationController
 
  # before_action :set_player
 
+  
   # POST /favorites or /favorites.json
   def create
     # @player_favorite = Favorite.new(user_id: current_user.id, player_id: params[:player_id])
@@ -41,9 +41,6 @@ class FavoritesController < ApplicationController
     #   format.json { head :no_content }
   end
 
-  def not_authenticated
-    redirect_to login_url, alert: 'ログインしてください'
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
