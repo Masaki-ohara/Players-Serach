@@ -18,7 +18,7 @@
 
           <div class="dropdown-menu dropdown-menu-right">
             <%= link_to '探したいサッカー選手', search_players_path, class: 'dropdown-item' %>
-            <%= link_to '登録したサッカー選手一覧', '#', class: 'dropdown-item' %>
+            <%= link_to '登録したサッカー選手一覧', favorites_players_path, class: 'dropdown-item' %>
           </div>
         </li>
 
@@ -38,7 +38,7 @@
             <div class="dropdown-divider"></div>
             <%= link_to 'プロフィール', '#', class: 'dropdown-item' %>
 
-            <%= link_to 'ログアウト', '#', class: 'dropdown-item' %>
+            <%= link_to 'ログアウト', logout_path, class: 'dropdown-item', method: :delete %>
 
 
           <%

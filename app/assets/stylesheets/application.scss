@@ -16,9 +16,9 @@
  @import "top";
  @import "user_sessions";
  @import "bootstrap"; 
- @import 'font-awesome';
- @import 'font-awesome-sprockets';
- @import 'players';
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+ @import 'players_search';
 
  body {
     display: flex;
