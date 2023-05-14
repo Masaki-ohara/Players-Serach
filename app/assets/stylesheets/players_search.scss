@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import "bootstrap";
-@import 'font-awesome-sprockets';
 .player {
     width:100%;
     display: flex block; 
@@ -11,9 +10,24 @@
     text-align: center;
     padding: 40px 40px 40px 40px;
     margin: 30px 30px 40px 40px;
-    background-image: url("<%= asset_path('soccer_image.jpg') %>")
+    background-image: url("soccer_ball.jpg");
+    background-size: cover;
+    object-fit: cover;
+    width: 100vw;
+    opacity: 0.8;
+}   
+
+table {
+    margin:0 auto;
 }
 
+.player-content {
+    color:blue;;
+}
+
+.a {
+    color: skyblue;
+}
 // .background {
 //     background-image: image-url('soccer_image_image.jpg');
 //   }
