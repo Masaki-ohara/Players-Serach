@@ -1,33 +1,25 @@
  <div class="container">
-   <div class="row">
-      <div class = "col-12 mx-auto text-center mt-5 mb-2">
 
-        <h1>お気に入りした選手</h1>
-          <table>
-           <% if @players.present? %>
-
+      <h1 class="text-center">お気に入りした選手</h1>
  <!-- 変数で定義 -->
+  <div class="row">
+    <% if @players.present? %>
       <% @players.each do |player| %>
-       <table>
-        <td><%= image_tag player[0]["player"]["photo"] %></td> 
+        <div class = "col-md-4">
+          <table>
+           <td><%= image_tag player[0]["player"]["photo"] %></td> 
 
-      <td>プレイヤー名</td>
-       <td><%= player[0]["player"]["lastname"] + player[0]["player"]["firstname"]%></td>
-  <%= form_with url: players_url, method: :get, local: true do |f| %>
-   <%= f.hidden_field :league, value: player[0]["statistics"][0]["league"]["id"] %>
-  <%= f.hidden_field :season, value: player[0]["statistics"][0]["league"]["season"] %>
-  <%= f.hidden_field :player_name, value: player[0]["player"]["name"] %>
-        <%= f.submit '選手詳細', class: 'btn btn-primary' %>
-        <div class="col-md-4">
-  </table>
-
-<%end%>
-    </tr>
-      <%end%> 
-      </div>
-    </div>
-  </div>
+           <td>プレイヤー名</td>
+           <td><%= player[0]["player"]["lastname"] + player[0]["player"]["firstname"]%></td>
+          <%= form_with url: players_url, method: :get, local: true do |f| %>
+            <%= f.hidden_field :league, value: player[0]["statistics"][0]["league"]["id"] %>
+            <%= f.hidden_field :season, value: player[0]["statistics"][0]["league"]["season"] %>
+            <%= f.hidden_field :player_name, value: player[0]["player"]["name"] %>
+            <%= f.submit '選手詳細', class: 'btn btn-primary' %>
+          <%end%>
+         </table>
+         </div>
+       <%end%>
+     <%end%> 
  </div>
 </div>
-</div>
-<%end%>
