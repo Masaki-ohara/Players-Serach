@@ -4,9 +4,6 @@ class PlayersController < ApplicationController
   require 'net/http'
   require 'openssl'
   require 'json'
-
-  #before_action :set_player, only: %i[search]
-  # before_action :set_q, only: %i[search]
   
   def not_authenticated
     flash[:danger] ="ログインしてください"
