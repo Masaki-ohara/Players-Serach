@@ -3,7 +3,7 @@
 <% alert %>
 <h1 class=text-center>player</h1>
 <div>
-  <table>
+  <table class="mt-5">
     <tr>
      <td><%= image_tag @imageURL %></td>
      </div>
@@ -89,7 +89,7 @@
 <% if current_user %>
    <%= render partial: 'favorite_button', locals: {player: @player_id, season: @season, league: @league  }%>
 <%end%>
-<%= link_to 'Back', search_players_path %>
+<%= link_to '戻る', search_players_path %>
  </div>
  </div>
 </div>
