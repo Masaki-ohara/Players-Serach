@@ -62,5 +62,5 @@ gem 'kaminari'
 gem 'pry-rails'
 gem 'rails-i18n', '~> 6.0'
 gem "dockerfile-rails", ">= 1.2", :group => :development
-
 gem "redis", "~> 5.0"
+gem 'dotenv-rails'
