@@ -60,19 +60,6 @@ class PlayersController < ApplicationController
   end
   end
 
-  # PATCH/PUT /players/1 or /players/1.json
-  def update
-    respond_to do |format|
-      if @player.update(player_params)
-        format.html { redirect_to player_url(@player), notice: "Player was successfully updated." }
-        format.json { render :show, status: :ok, location: @player }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @player.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   def search
     @player = Player.new(player_name: params[:player_name], season: params[:season], league: params[:league])
   end
@@ -105,22 +92,5 @@ class PlayersController < ApplicationController
   end
 
   private
-
-  def set_player
-    @player = Player.find(params[:player_id])
-  end
-
-    # Only allow a list of trusted parameters through.
-  def player_params
-    params.require(:player).permit(:player_name, :season, :league)
-  end
-
-  def season_params
-    params.require(:season).permit(:season)
-  end
-
-  def favorites_params
-    params.require(:favorites).permit(:player_name, :season, :league)
-  end 
 end
 
