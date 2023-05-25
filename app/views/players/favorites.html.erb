@@ -14,11 +14,11 @@
             <%= f.hidden_field :league, value: player[0]["statistics"][0]["league"]["id"] %>
             <%= f.hidden_field :season, value: player[0]["statistics"][0]["league"]["season"] %>
             <%= f.hidden_field :player_name, value: player[0]["player"]["name"] %>
+          <% end %>
+          </table>
+        </div>
       <% end %>
-        </table>
-      </div>
-      <% end %>
-    <% else %>
+     <% else %>
       <div class= "mx-auto text-center m-5">
         選手のお気に入りがありません
       </div>
