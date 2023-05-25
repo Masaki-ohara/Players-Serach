@@ -29,7 +29,7 @@ class PlayersController < ApplicationController
     @result = JSON.parse(response.read_body)
     if @result["response"] != []     
       #responseの中身の配列が空じゃなければ検索実行
-      @player_id =  @result["response"][0]["player"]["id"]
+      @player_id = @result["response"][0]["player"]["id"]
       @league = @result["response"][0]["statistics"][0]["league"]["id"]
       @imageURL = @result["response"][0]["player"]["photo"]
       @lastname = @result["response"][0]["player"]["lastname"]
