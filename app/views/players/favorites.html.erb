@@ -6,8 +6,8 @@
       <% @players.each do |player| %>
         <div class = "col-md-4">
           <table>
-           <td><%= image_tag player[0]["player"]["photo"] %></td> 
-           <td>プレイヤー名</td>
+            <td><%= image_tag player[0]["player"]["photo"] %></td> 
+            <td>プレイヤー名</td>
            <td><%= player[0]["player"]["lastname"] + player[0]["player"]["firstname"]%></td>
           <%= form_with url: players_url, method: :get, local: true do |f| %>
             <%= f.submit '選手詳細', class: 'btn btn-primary' %>
@@ -18,7 +18,7 @@
           </table>
         </div>
       <% end %>
-     <% else %>
+    <% else %>
       <div class= "mx-auto text-center m-5">
         選手のお気に入りがありません
       </div>
