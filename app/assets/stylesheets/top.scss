@@ -3,13 +3,18 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .top-wrapper {
-  height: calc(100vh - 134px);
-  position: relative;
-  background-position: center;
-  background-image: url("top.jpg");
+  // height: calc(100vh - 134px);
+  // position: relative;
+  // background-position: center;
+  // background-image: url("top.jpg");
+  // background-size: cover;
+  background-color: #C0C0C0;
   background-size: cover;
 }
 
+.player_favorite{
+  color: black;
+}
 // .top-wrapper {
 //   background-image: image-url("top.jpg");
 //   height: calc(100vh - 134px);

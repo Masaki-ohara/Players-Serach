@@ -3,13 +3,6 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import "bootstrap";
 .player {
-    // width:100%;
-    // display: flex block; 
-    // flex-flow: column;
-    // min-height: 100vh;
-    // text-align: center;
-    // padding: 40px 40px 40px 40px;
-    // margin: 30px 30px 40px 40px;
     position: relative;
     background-image: url("soccer_ball.jpg");
     background-position: center;
@@ -30,6 +23,20 @@ table {
 
 .a {
     color: skyblue;
+}
+
+.link {
+    text-decoration: none;
+    color: white ; 
+}
+
+.video {
+    padding: 0 100px;
+    text-decoration: center;
+}
+
+.video video {
+    width: 100%;
 }
 // .background {
 //     background-image: image-url('soccer_image_image.jpg');

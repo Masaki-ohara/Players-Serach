@@ -1,6 +1,6 @@
 <header>
-  <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+  <div class="container-fluid  bg-light" >
+    <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;"> 
 
     <%= link_to root_path, class: 'navbar-brand' do %>
       <%= image_tag 'football.png' %>
@@ -16,10 +16,12 @@
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             サッカー選手
           </a>
-
+          
+          <div class="player_favorite">
           <div class="dropdown-menu dropdown-menu-right">
             <%= link_to '探したいサッカー選手', search_players_path, class: 'dropdown-item' %>
             <%= link_to '登録したサッカー選手一覧', favorites_players_path, class: 'dropdown-item' %>
+          </div>
           </div>
         </li>
 
