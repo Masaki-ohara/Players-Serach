@@ -27,4 +27,5 @@ Rails.application.routes.draw do
       get 'search'   
     end
   end
+  get '*path', controller: 'application', action: 'render_500'
 end
