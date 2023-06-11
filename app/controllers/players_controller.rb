@@ -15,7 +15,6 @@ class PlayersController < ApplicationController
     if @player.valid?
     query_string = URI.encode_www_form({ search: params[:player_name], season: params[:season], league: params[:league], })
     url = URI.parse("https://api-football-v1.p.rapidapi.com/v3/players?#{query_string}")
-    #url = URI.parse("https://api-football-v1.p.rapidapi.com/v3/players?id=#{params[:id]}&season=#{params[:season]}")
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
@@ -90,6 +89,8 @@ class PlayersController < ApplicationController
    print "選手"
    print @players
   end
+
+  def treatment; end
 
   private
 end

@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class=text-center>使い方説明</h1>
+    <div class="mt-5">
+      <body>
+      <font size="4">1.検索する選手の所属元のleagueを選択</font><br>
+      <font size="4">2.検索したいseasonを選択</font><br>
+      <font size="4">3.選手名を入力(姓をローマ字で入力お願いします)</font><br>
+      </body>
+      <div class="video">
+        <%= video_tag("/videos/sample.mp4", autoplay: :true, loop: :true, muted: :true ) %>
+      </div>
+  <%= link_to '戻る', search_players_path %>
+  </div>
+</div>
