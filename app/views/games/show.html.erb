@@ -1,7 +1,7 @@
 
  <div id="wg-api-football-games"
      data-host="api-football-v1.p.rapidapi.com"
-     data-key= 'd303e74938msh00c29368f24eabcp1dc98djsnc0b438abb423'
+     data-key=  'd303e74938msh00c29368f24eabcp1dc98djsnc0b438abb423'
      data-date=""
      data-league=<%=@league%>
      data-season=<%=@season%>
@@ -14,8 +14,5 @@
      data-modal-standings="true"
      data-modal-show-logos="true">
 </div>
-<script
-    type="module"
-    src="https://widgets.api-sports.io/2.0.3/widgets.js">
-</script>  
+<%= javascript_include_tag "https://widgets.api-sports.io/2.0.3/widgets.js", type: "module" %>
 <%= link_to "戻る", games_search_path %>
