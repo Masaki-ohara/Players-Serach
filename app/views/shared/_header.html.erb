@@ -28,6 +28,19 @@
         <li class="nav-item nav-link">
           <%= link_to '各リーグ試合情報', games_search_path %>
         </li>
+
+        <li class="nav-item nav-link">
+          <%= link_to '新規登録',  new_user_path %>
+        </li>
+
+        <%
+=begin%>
+ <li class="nav-item nav-link">
+          <%= link_to 'マッチメイク',   new_match_path %>
+        </li> 
+<%
+=end%>
+
         <li class="nav-item nav-link">
           <% if logged_in? %>
             <%= link_to 'ログアウト', logout_path, method: :delete %>
