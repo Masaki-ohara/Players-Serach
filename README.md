@@ -58,4 +58,4 @@ API
 https://www.figma.com/file/LD2FCNcJk4LkqCu2xamYEh/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%A9?node-id=2%3A22
 
 # ER図
-[![Image from Gyazo](https://i.gyazo.com/7f0c133f13871d3e6df3e464f078246c.png)](https://gyazo.com/7f0c133f13871d3e6df3e464f078246c)
+[![Image from Gyazo](https://i.gyazo.com/44ba13c1f8eb4db825d4a1b133c895cf.png)](https://gyazo.com/44ba13c1f8eb4db825d4a1b133c895cf)
