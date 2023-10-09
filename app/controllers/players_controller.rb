@@ -21,7 +21,7 @@ class PlayersController < ApplicationController
   
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'api-football-v1.p.rapidapi.com'
-    request["x-rapidapi-key"] = ENV["API_KEY"]
+    request["x-rapidapi-key"] = 'd303e74938msh00c29368f24eabcp1dc98djsnc0b438abb423'
     
     response = http.request(request)
     puts response.read_body
