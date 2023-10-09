@@ -1,0 +1,54 @@
+<%
+=begin%>
+ <h1>Search Matches</h1>
+
+<%= form_tag('/fixtures/search', method: 'get') do %>
+  <div>
+    <%= label_tag(:date, "Date:") %>
+    <%= text_field_tag(:date) %>
+  </div>
+
+  <div>
+    <%= label_tag(:league, "League:") %>
+    <%= select_tag(:league, options_for_select(@leagues)) %>
+  </div>
+
+  <%= submit_tag("Search") %>
+<% end %>
+
+<% if @matches.present? %>
+  <h2>Matches</h2>
+  <ul>
+    <% @matches.each do |match| %>
+      <li>
+        <%= match['home_team'] %> vs <%= match['away_team'] %>
+        (Status: <%= match['status'] %>)
+      </li>
+    <% end %>
+  </ul>
+<% elsif @error.present? %>
+  <p><%= @error %></p>
+<% end %> 
+<%
+=end%>
+<h1 class="mt-5">試合予想</h1>
+   <div class="col-md-6 offset-md-3"> 
+  <%= form_with url:  search_fixtures_url, method: :get, local: true do|f| %>
+<div class="form-group"> 
+  <div class="w-100"></div>  
+   <div class='mt-3 mb-3'>
+    <%= f.select :league, [["J1 League", 98], ["J2 League", 99], ["J3 League",100], ["Ligue 1(フランス1部)", 61], ["La Liga(スペイン1部)", 140], ["Premier(イングランド1部)", 39], ["SerieA(イタリア1部)", 135], ["Bundesliga(ドイツ1部)", 78], ["Eredivisie(オランダ1部)", 88], ["Primeira Liga(ポルトガル1部）", 94]], {include_blank: "リーグを選択して下さい"}, {class: 'form-control'} %> 
+   </div>   
+  <div class="w-100"></div>
+  <div class='mt-3 mb-3'>
+    <%= f.text_field :data, class: 'form-control', placeholder: '日付を入力して下さい',size: "30" %>
+  </div>   
+  <div class="w-100"></div>
+   <div class="mt-4 col-md">
+  <%= f.submit '検索', class: 'btn btn-primary' %>
+  </div> 
+  </div>
+</div>
+</div>
+</div>
+<%end%>

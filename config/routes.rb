@@ -27,5 +27,14 @@ Rails.application.routes.draw do
       get 'search'   
     end
   end
+  
+  resource :predictions, only: %i[new] do
+    collection do 
+      get 'search'   
+    end
+  end
+
+  resources :matches, only: %i(new create show)
+
   get '*path', controller: 'application', action: 'render_500'
 end

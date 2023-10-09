@@ -1,0 +1,5 @@
+<h1>試合予想</h1>
+ 
+<%= form_with url:  new_predictions_path, method: :get, local: true do |f| %>
+　<h2>試合カード</h2>
+  <%= f.text_field :team_name, class: 'form-control', size: "30" %>

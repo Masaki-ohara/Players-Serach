@@ -1,0 +1,6 @@
+<%= form_with url: '/matches', method: 'post', remote: true do |form| %>
+  <%= form.text_field :home_team %>
+  <%= form.text_field :away_team %>
+  <%= form.submit '試合カードを作成' %>
+<% end %>
+
