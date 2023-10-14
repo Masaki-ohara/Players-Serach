@@ -1,0 +1,13 @@
+<h1>試合カード詳細</h1>
+
+<div class="match-details">
+  <p><strong>日付:</strong> <%= @match.date %></p>
+  <p><strong>節:</strong> <%= @match.round %></p>
+  <p><strong>リーグ:</strong> <%= @match.league %></p>
+  <p><strong>ホームチーム:</strong> <%= @match.home_team_name %></p>
+  <p><strong>アウェイチーム:</strong> <%= @match.away_team_name %></p>
+</div>
+
+  <%= link_to '編集', edit_match_path(@match), class: "btn btn-primary"  %>
+  <%= link_to '削除', match_path(@match),method: :delete, data: { confirm: '本当に削除していいですか?' } %>
+<%= link_to '一覧に戻る', matches_path %>
