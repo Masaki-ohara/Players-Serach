@@ -34,6 +34,7 @@ module PlayersSerach
     # Don't generate system test files.
       config.time_zone = 'Tokyo'
       config.active_record.default_timezone = :local
+      config.assets.enabled = true
   
       #　以下の記述を追記する(設定必須)
       # デフォルトのlocaleを日本語(:ja)にする

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'privacy_policy', to: 'static_pages#privacy_policy'
   get 'terms_of_use', to: 'static_pages#terms_of_use'
   get 'treatment', to: 'players#treatment'
+  get '/index', to: 'matches#index'
   resources :users, only: %i(new create show)
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resource :players, only: %i[show] do
@@ -34,7 +35,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :matches, only: %i(new create show)
+  resources :matches do
+  end
+  # only: %i(create show index)
 
-  get '*path', controller: 'application', action: 'render_500'
+  # get '*path', controller: 'application', action: 'render_500'
 end
