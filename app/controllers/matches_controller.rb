@@ -1,44 +1,30 @@
-# class MatchesController < ApplicationController
-# 　def create
-#     @match = Match.new(match_params)
-#     if @match.save
-#       render json: { match: @match }, status: :created
-#     else
-#       render json: { errors: @match.errors.full_messages }, status: :unprocessable_entity
-#     end
-#   end
-
-#   def index
-#     @matchs = Match.all
-#   end
-
-#   private
-
-#   def match_params
-#     params.require(:match).permit(:home_team, :away_team)
-#   end
-# end
 class MatchesController < ApplicationController
-    before_action :set_match, only: [:show, :update, :destroy]
+  # before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_match, only: [:show, :update, :destroy]
   
     def index
       @matches = Match.all
-      render json: @matches
     end
   
     def show
       render json: @match
     end
-  
+
+    def new
+      @match = current_user.matches.new
+    end
+
     def create
-      @match = Match.new(match_params)
+      @match = current_user.matches.new(match_params)
       if @match.save
-        render json: @match, status: :created
+        redirect_to matches_path, notice: '試合カードの作成が完了しました。'
       else
-        render json: { errors: @match.errors.full_messages }, status: :unprocessable_entity
+        flash.now[:danger] = '作成に失敗しました。'
+        render 'new'
       end
     end
-  
+    
+
     def update
       if @match.update(match_params)
         render json: @match
@@ -59,7 +45,7 @@ class MatchesController < ApplicationController
     end
   
     def match_params
-      params.require(:match).permit(:home_team, :away_team)
+      params.require(:match).permit(:date, :round, :league, :home_team_name, :away_team_name)
     end
   end
   
