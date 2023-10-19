@@ -2,17 +2,31 @@ class MatchesController < ApplicationController
   # before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_match, only: [:show, :update, :destroy, :edit]
   before_action :login_match, only: [:edit, :destroy, :update]
-  
-    def index
-      @matches = Match.all
-    end
-  
-    def show
-      @match = Match.find(params[:id])
-    end
+  before_action :require_login, only: [:new, :create, :show, :index]
 
+    def not_authenticated
+      flash[:danger] ="ログインしてください"
+      redirect_to login_path
+    end
+    
     def new
       @match = current_user.matches.new
+    end
+    # def index
+    #   @matches = Match.all   
+    #   @prediction = Prediction.new
+    #   @predictions = @match.predictions.includes(:user).order(created_at: :desc)
+    # end
+    def index
+      @matches = Match.all
+      @prediction = Prediction.new
+      @predictions = Prediction.includes(:user).where(match_id: @matches.pluck(:id)).order(created_at: :desc)
+    end
+    
+
+    def show
+      @match = Match.find(params[:id])
+      # @prediction = Prediction.where(match_id: @matches.pluck(:id))
     end
 
     def create

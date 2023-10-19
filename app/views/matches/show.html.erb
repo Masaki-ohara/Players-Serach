@@ -8,6 +8,6 @@
   <p><strong>アウェイチーム:</strong> <%= @match.away_team_name %></p>
 </div>
 
-  <%= link_to '編集', edit_match_path(@match), class: "btn btn-primary"  %>
+  <%= link_to '編集', edit_match_path(@match) %>
   <%= link_to '削除', match_path(@match),method: :delete, data: { confirm: '本当に削除していいですか?' } %>
 <%= link_to '一覧に戻る', matches_path %>

@@ -1,0 +1,57 @@
+<%
+=begin%>
+ <% @prediction.each do |prediction| %>
+
+  <!-- 試合内容 -->
+  <% if prediction == @prediction.first %>
+    <h1>試合内容</h1>
+    <p>試合ID: <%= prediction.match.id %></p>
+    <p>試合日: <%= prediction.match.date %></p>
+    <p>ホームチーム: <%= prediction.match.home_team_name %></p>
+    <p>アウェイチーム: <%= prediction.match.away_team_name %></p>
+  <% end %>
+
+  <!-- 試合予想投稿詳細 -->
+  <h3>投稿内容</h3>
+  <p>ホームチームの得点: <%= prediction.home_score %></p>
+  <p>アウェイチームの得点: <%= prediction.away_score %></p>
+  <p>予想勝者: <%= prediction.predicted_winner %></p>
+  <p>予想敗者: <%= prediction.predicted_loser %></p>
+
+<% end %> 
+<%
+=end%>
+<%
+=begin%>
+ <% @prediction.each do |prediction| %> 
+<%
+=end%>
+  <!-- 試合内容 -->
+  <%
+=begin%>
+ <% if @prediction == @prediction.first %> 
+<%
+=end%>
+    <h1>試合内容</h1>
+    <p>試合ID: <%= @prediction.match.id %></p>
+    <p>試合日: <%= @prediction.match.date %></p>
+    <p>ホームチーム: <%= @prediction.match.home_team_name %></p>
+    <p>アウェイチーム: <%= @prediction.match.away_team_name %></p>
+  <%
+=begin%>
+ <% end %> 
+<%
+=end%>
+
+  <!-- 試合予想投稿詳細 -->
+  <h3>投稿内容</h3>
+  <p>ホームチームの得点: <%= @prediction.home_score %></p>
+  <p>アウェイチームの得点: <%= @prediction.away_score %></p>
+  <p>予想勝者: <%= @prediction.predicted_winner %></p>
+  <p>予想敗者: <%= @prediction.predicted_loser %></p>
+  <p>引き分け: <%= @prediction.draw%></p>
+  <p>コメント: <%= @prediction.comment %></p>
+
+  <% if current_user == @prediction.user %>
+    <%= render 'button', match: @match, prediction: @prediction %>
+  <% end %>

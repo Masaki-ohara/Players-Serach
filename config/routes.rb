@@ -29,14 +29,10 @@ Rails.application.routes.draw do
     end
   end
   
-  resource :predictions, only: %i[new] do
-    collection do 
-      get 'search'   
-    end
-  end
-
   resources :matches do
+    resources :predictions
   end
+  
   # only: %i(create show index)
 
   # get '*path', controller: 'application', action: 'render_500'

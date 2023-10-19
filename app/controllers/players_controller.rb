@@ -26,13 +26,20 @@ class PlayersController < ApplicationController
     response = http.request(request)
     puts response.read_body
     @result = JSON.parse(response.read_body)
-    if @result["response"] != []     
+    
+    # binding.pry
+    
+    if @result["response"].present? 
       #responseの中身の配列が空じゃなければ検索実行
       @player_id = @result["response"][0]["player"]["id"]
       @league = @result["response"][0]["statistics"][0]["league"]["id"]
+      
+      # binding.pry
+      
       @imageURL = @result["response"][0]["player"]["photo"]
-      @lastname = @result["response"][0]["player"]["lastname"]
-      @firstname = @result["response"][0]["player"]["firstname"]
+      @player_name = @result["response"][0]["player"]["name"]
+      # @lastname = @result["response"][0]["player"]["lastname"]
+      # @firstname = @result["response"][0]["player"]["firstname"]
       @season = @result["response"][0]["statistics"][0]["league"]["season"]
       @team = @result["response"][0]["statistics"][0]["team"]["name"]
       @age = @result["response"][0]["player"]["age"]
@@ -51,11 +58,12 @@ class PlayersController < ApplicationController
       @dribbles = @result["response"][0]["statistics"][0]["dribbles"]["attempts"]
       @success = @result["response"][0]["statistics"][0]["dribbles"]["success"]
       @saves = @result["response"][0]["statistics"][0]["goals"]["saves"]
+    else
+      flash[:danger] = "プレイヤー情報が存在しません."
+      redirect_to search_players_path
     end
    else
     #redirect_to search_players_path
-    flash.now[:danger] = "プレイヤー情報が存在しません."
-    render :search
   end
   end
 
