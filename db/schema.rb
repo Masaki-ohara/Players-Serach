@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_11_034606) do
+ActiveRecord::Schema.define(version: 2023_10_16_081631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,12 @@ ActiveRecord::Schema.define(version: 2023_10_11_034606) do
     t.string "predicted_result"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "home_score"
+    t.integer "away_score"
+    t.string "predicted_loser"
+    t.string "predicted_winner"
+    t.string "comment"
+    t.string "draw"
     t.index ["user_id"], name: "index_predictions_on_user_id"
   end
 

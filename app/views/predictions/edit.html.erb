@@ -1,0 +1,45 @@
+<%
+=begin%>
+ <%= form_with(model: @prediction, url: edit_match_prediction_path(@match, @prediction), method: :patch, local: true) do |f| %> 
+<%
+=end%>
+<%= form_with(model: @prediction, url: match_prediction_path(@prediction.match, @prediction), method: :patch, local: true) do |f| %>
+  <div class="form-group">
+    <div class="row mb-3">
+      <div class="col">
+        <%= f.label :home_score, class: "form-label" %>
+        <%= f.number_field :home_score, class: "form-control" %>
+      </div>
+
+      <div class="col">
+        <%= f.label :away_score, class: "form-label" %>
+        <%= f.number_field :away_score, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-check form-switch mb-3">
+      <%= f.label :draw, class: "form-check-label" do %>
+        <%= f.check_box :draw, class: "form-check-input" %> 引き分け
+      <% end %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :predicted_winner, class: "form-label" %>
+      <%= f.text_field :predicted_winner, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :predicted_loser, class: "form-label" %>
+      <%= f.text_field :predicted_loser, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :comment, "コメント", class: "form-label" %>
+      <%= f.text_area :comment, class: "form-control comment", rows: 10 %>
+    </div>
+
+    <%= f.submit '予想を更新する', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= link_to '戻る', matches_path, class: 'btn btn-secondary mt-3' %>

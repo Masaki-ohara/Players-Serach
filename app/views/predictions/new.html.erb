@@ -1,5 +1,64 @@
-<h1>試合予想</h1>
- 
-<%= form_with url:  new_predictions_path, method: :get, local: true do |f| %>
-　<h2>試合カード</h2>
-  <%= f.text_field :team_name, class: 'form-control', size: "30" %>
+
+<%= form_with model: @prediction, url: match_predictions_path(@match), method: :post, local: true do |f| %>
+  <div class="form-group">
+    <%= f.hidden_field :match_id, value: @match.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+
+    <div class="row mb-3">
+      <div class="col">
+        <%= f.label :home_score, "ホームスコア", class: "form-label" %>
+        <%= f.number_field :home_score, class: "form-control" %>
+      </div>
+
+      <div class="col">
+        <%= f.label :away_score, "アウェースコア", class: "form-label" %>
+        <%= f.number_field :away_score, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-check form-switch mb-3">
+      <%= f.label :draw, class: "form-check-label" do %>
+        <%= f.check_box :draw, id: "checker", class: "form-check-input" %> 引き分け
+      <% end %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :predicted_winner, "勝利チーム", class: "form-label" %>
+      <%= f.select :predicted_winner,  @prediction_match, { id: 'textinput', class: 'form-control' } %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :predicted_loser, "敗者チーム", class: "form-label" %>
+      <%= f.select :predicted_loser, @prediction_match, {id: "loseinput", class: "form-control" } %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :comment, "コメント", class: "form-label" %>
+      <%= f.text_area :comment, class: "form-control comment", rows: 10 %>
+    </div>
+
+    <%= f.submit '予想する', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= link_to '戻る', matches_path, class: 'btn btn-secondary mt-3' %>
+
+<script>
+const checker = document.getElementById('checker');
+const textinput = document.getElementById('textinput');
+const loseinput = document.getElementById('loseinput');
+
+// チェックボックスの状態が変わったときのイベントを設定
+checker.addEventListener('change', function() {
+  if (checker.checked) {
+    // チェックボックスがチェックされた場合、テキストボックスを非アクティブにする
+    textinput.disabled = true;
+    loseinput.disabled = true;
+  } else {
+    // チェックボックスがチェックされていない場合、テキストボックスをアクティブにする
+    textinput.disabled = false;
+    loseinput.disabled = false;
+  }
+});
+
+</script>

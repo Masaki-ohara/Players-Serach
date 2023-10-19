@@ -4,10 +4,21 @@
   <div class="match-cards">
     <% @matches.each do |match| %>
       <div class="match-card">
-        <p><%= match.date %> - 何節: <%= match.round %> - リーグ: <%= match.league %> - <%= match.home_team_name %> vs <%= match.away_team_name %></p>
-        
+        <p><%= match.date %> - 節: <%= match.round %> - リーグ: <%= match.league %> - <%= match.home_team_name %> vs <%= match.away_team_name %></p>
+
+        <%= link_to '試合予想投稿', new_match_prediction_path(match) %>
+        <% match.predictions.each do |prediction| %>
+          <%= link_to '予想詳細', match_prediction_path(match, prediction) %>
+         <% end %>
+
         <% if current_user == match.user %>
-        <%= link_to '詳細', match_path(match) %>
+        <%= render 'menus', match: match %>
+
+        <%
+=begin%>
+ <%= link_to '詳細', match_path(match) %> 
+<%
+=end%>
         <% end %>
       </div>
     <% end %>

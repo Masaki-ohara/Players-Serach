@@ -6,4 +6,5 @@ class Match < ApplicationRecord
   validates :date, presence: true
   validates :round, presence: true
   validates :league, presence: true
+  has_many :predictions, dependent: :destroy
 end

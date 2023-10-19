@@ -3,11 +3,18 @@
 <h1 class=text-center>player</h1>
   <table class="mt-5">
     <tr>
-      <td><%= image_tag @imageURL %></td>
+      <% if @imageURL.present? %>
+        <td><%= image_tag @imageURL %></td>
+      <% end %>
     </tr>
     <tr>
       <td>プレイヤー名</td>
-      <td><%= @lastname + @firstname %></td>
+      <td><%= @player_name %></td>
+      <%
+=begin%>
+ <td><%= @lastname + @firstname %></td> 
+<%
+=end%>
     </tr>
     <tr>
       <td>西暦</td>

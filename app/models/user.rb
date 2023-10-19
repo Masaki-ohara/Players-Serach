@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
   has_many :matches
+  has_many :predictions
+
   validates :email, uniqueness: true
   validates :email, presence: true
   validates :name, presence: true, length: { maximum: 255 }

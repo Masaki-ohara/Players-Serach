@@ -1,0 +1,12 @@
+ <ul class='crud-menu-btn list-inline float-right'>
+    <li class="list-inline-item">
+      <%= link_to edit_match_prediction_path(match_id: @match.id, id: @prediction.id), id: "button-edit-#{prediction.id}" do %>
+         <%= icon 'fa', 'pen' %>
+      <% end %>
+    </li>
+    <li class="list-inline-item">
+      <%= link_to match_prediction_path, id: "button-delete-#{prediction.id}", method: :delete, data: { confirm: '本当に削除しますか？'} do %>
+        <%= icon 'fas', 'trash' %>
+      <% end %>
+    </li>
+  </ul>
