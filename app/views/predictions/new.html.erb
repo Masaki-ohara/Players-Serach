@@ -23,14 +23,28 @@
     </div>
 
     <div class="mb-3">
-      <%= f.label :predicted_winner, "勝利チーム", class: "form-label" %>
+      <%
+=begin%>
+ <%= f.label :predicted_winner, "勝利チーム", class: "form-label" %>
       <%= f.select :predicted_winner,  @prediction_match, { id: 'textinput', class: 'form-control' } %>
     </div>
 
     <div class="mb-3">
       <%= f.label :predicted_loser, "敗者チーム", class: "form-label" %>
       <%= f.select :predicted_loser, @prediction_match, {id: "loseinput", class: "form-control" } %>
-    </div>
+    </div> 
+<%
+=end%>
+<div class="mb-3">
+  <%= f.label :predicted_winner, "勝利チーム", class: "form-label" %>
+  <%= f.select :predicted_winner, @prediction_match, {}, { id: 'textinput', class: 'form-control' } %>
+</div>
+
+<div class="mb-3">
+  <%= f.label :predicted_loser, "敗者チーム", class: "form-label" %>
+  <%= f.select :predicted_loser, @prediction_match, {}, { id: "loseinput", class: "form-control" } %>
+</div>
+
 
     <div class="mb-3">
       <%= f.label :comment, "コメント", class: "form-label" %>
