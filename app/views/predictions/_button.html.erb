@@ -5,8 +5,15 @@
       <% end %>
     </li>
     <li class="list-inline-item">
-      <%= link_to match_prediction_path, id: "button-delete-#{prediction.id}", method: :delete, data: { confirm: '本当に削除しますか？'} do %>
+      <%= link_to match_prediction_path(match_id: @match.id, id: @prediction.id), id: "button-delete-#{prediction.id}", method: :delete, data: { confirm: '本当に削除しますか？'} do %>
+      <%= icon 'fas', 'trash' %>
+    <% end %>
+      <%
+=begin%>
+ <%= link_to match_prediction_path, id: "button-delete-#{prediction.id}", method: :delete, data: { confirm: '本当に削除しますか？'} do %>
         <%= icon 'fas', 'trash' %>
-      <% end %>
+      <% end %> 
+<%
+=end%>
     </li>
   </ul>

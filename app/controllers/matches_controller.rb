@@ -34,7 +34,7 @@ class MatchesController < ApplicationController
       if @match.save
         redirect_to matches_path, notice: '試合カードの作成が完了しました。'
       else
-        flash.now[:danger] = '作成に失敗しました。'
+        flash[:danger] = '作成に失敗しました。'
         render 'new'
       end
     end

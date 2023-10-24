@@ -94,6 +94,8 @@ class Prediction < ApplicationRecord
   validates :user_id, presence: true
   validates :match_id, presence: true
 
+  has_many :comments, dependent: :destroy
+
   # カスタムバリデーション
   validate :test
 

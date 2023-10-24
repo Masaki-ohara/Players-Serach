@@ -1,0 +1,27 @@
+<%
+=begin%>
+ <%= form_with model: @prediction, url: match_predictions_path(@match), method: :post, local: true do |f| %> 
+<%
+=end%>
+<%
+=begin%>
+ <%= form_with model: @comment, url:  match_prediction_path(@match, @prediction, @comment), method: :post,  local: true) do |form| %> 
+<%
+=end%>
+<%
+=begin%>
+ <%= form_with model: @comment, url: prediction_comments_path(@match, @prediction), method: :post,  local: true do |form| %> 
+<%
+=end%>
+<%= form_with model: @comment, url: match_prediction_comments_path(@match, @prediction), method: :post, local: true do |form| %>
+  <%= form.hidden_field :match_id, value: @match.id %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field :prediction_id, value: @prediction.id %>
+  <div class="field">
+    <%= form.label :content, 'コメント' %>
+    <%= form.text_area :content, rows: 3, class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= form.submit 'コメントする', class: 'btn btn-primary' %>
+  </div>
+<% end %>
