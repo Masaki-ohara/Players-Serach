@@ -8,10 +8,33 @@ class PredictionsController < ApplicationController
   end
   
 
+  # def show
+  #   @match = Match.find(params[:match_id])
+  #   @prediction = Prediction.find(params[:id])
+  #   @comments = Comment.new(match: @match, prediction: @prediction, user: current_user)
+  #   @comments = @prediction.comments.includes(:user).order(created_at: :desc)
+  # end
+  # def show
+  #   @prediction = Prediction.find(params[:id])
+  #   @comments = Comment.new(match_id: @prediction.match.id, prediction_id: @prediction.id, user_id: current_user.id)
+  #   @comments = @prediction.comments.includes(:user).order(created_at: :desc)
+  # end
+  # def show
+  #   @prediction = Prediction.find(params[:id])
+  #   @match = @prediction.match
+  #   @user = @prediction.user
+  #   # binding.pry
+  #   @comment = Comment.new(prediction: @prediction, match: @match, user: @user)
+  #   @comments = @prediction.comments.includes(:user).order(created_at: :desc)
+  # end
   def show
-    @match = Match.find(params[:match_id])
     @prediction = Prediction.find(params[:id])
+    @match = @prediction.match
+    @user = @prediction.user
+    @comment = Comment.new
+    @comments = @prediction.comments.includes(:user).order(created_at: :desc)
   end
+  
 
   def new
     @match = Match.find(params[:match_id])
@@ -86,7 +109,8 @@ class PredictionsController < ApplicationController
     if @prediction.update(prediction_params)
       redirect_to match_prediction_path(@prediction), notice: '更新しました'
     else
-      render :edit
+      flash[:danger] = @prediction.errors.full_messages.join(', ')
+      redirect_to edit_match_prediction_path(@match, @prediction)
     end
   end
   
@@ -99,7 +123,7 @@ class PredictionsController < ApplicationController
   private
 
   def prediction_params
-    params.require(:prediction).permit(:match_id, :user_id, :home_score, :away_score, :predicted_winner, :predicted_loser, :draw, :comment)
+    params.require(:prediction).permit(:match_id, :user_id, :home_score, :away_score, :predicted_winner, :predicted_loser, :draw, :comment).merge(:content)
   end
 
   def set_prediction

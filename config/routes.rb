@@ -29,9 +29,24 @@ Rails.application.routes.draw do
     end
   end
   
+  # resources :matches do
+  #   resources :predictions
+  #   resources :comments, only: %i[new create destroy]
+  # end
+
   resources :matches do
-    resources :predictions
+    resources :predictions do
+      resources :comments, only: [:new, :create, :destroy]
+    end
   end
+  
+  
+
+  # resources :predictions do
+  #   resources :comments, only: %i[create destroy update]
+  # end
+  
+
   
   # only: %i(create show index)
 
