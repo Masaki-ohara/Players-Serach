@@ -1,6 +1,6 @@
 <%
 =begin%>
- <h1>試合予想投稿詳細</h1>
+ 
 
 <p>試合ID: <%= @prediction.match.id %></p>
 <p>試合日: <%= @prediction.match.date %></p>
@@ -14,11 +14,7 @@
 <%= link_to '編集', edit_match_prediction_path(@prediction) %>
 <%= link_to '削除', match_prediction_path(@prediction), method: :delete, data: { confirm: '本当に削除しますか？' } %>
 <%= link_to '一覧に戻る', match_predictions_path %> 
-<%
-=end%>
 
-<%
-=begin%>
  <% @predictions.each do |prediction| %>
   <h1>試合予想投稿詳細</h1>
 
@@ -26,28 +22,35 @@
   <p>試合日: <%= prediction.match.date %></p>
   <p>ホームチーム: <%= prediction.match.home_team_name %></p>
   <p>アウェイチーム: <%= prediction.match.away_team_name %></p>
-<% end %> 
+<% end %>  
 <%
 =end%>
 
-<%
+
+
+ <%
 =begin%>
  <h1>試合内容</h1>
   <p>試合ID: <%= @predictions.match.id %></p>
   <p>試合日: <%= @predictions.match.date %></p>
   <p>ホームチーム: <%= @predictions.match.home_team_name %></p>
-  <p>アウェイチーム: <%= @predictions.match.away_team_name %></p>
+  <p>アウェイチーム: <%= @predictions.match.away_team_name %></p> 
+<%
+=end%>
 
 <% @predictions.each do |prediction| %>
   <h2>試合予想投稿詳細</h2>
 
+  <%= link_to '予想詳細', match_prediction_path(@match, prediction) %>
   <h3>投稿内容</h3>
   <p>ホームチームの得点: <%= prediction.home_score %></p>
   <p>アウェイチームの得点: <%= prediction.away_score %></p>
   <p>予想勝者: <%= prediction.predicted_winner %></p>
   <p>予想敗者: <%= prediction.predicted_loser %></p>
+  <p>引き分け: <%= prediction.draw%></p>
+  <p>コメント: <%= prediction.comment %></p>
 <% end %> 
-<%
-=end%>
+
+
 
 

@@ -7,9 +7,17 @@
         <p><%= match.date %> - 節: <%= match.round %> - リーグ: <%= match.league %> - <%= match.home_team_name %> vs <%= match.away_team_name %></p>
 
         <%= link_to '試合予想投稿', new_match_prediction_path(match) %>
-        <% match.predictions.each do |prediction| %>
-          <%= link_to '予想詳細', match_prediction_path(match, prediction) %>
-         <% end %>
+        <%
+=begin%>
+ <% match.predictions.each do |prediction| %> 
+<%
+=end%>
+          <%= link_to '予想詳細', match_predictions_path(match) %>
+         <%
+=begin%>
+ <% end %> 
+<%
+=end%>
 
         <% if current_user == match.user %>
         <%= render 'menus', match: match %>

@@ -43,7 +43,9 @@ class PredictionsController < ApplicationController
   end
 
   def index
-    @predictions = Prediction.all
+    @match = Match.find(params[:match_id])
+    @predictions = @match.predictions
+    # @predictions = Match.Prediction.all
   end
 
   # def create

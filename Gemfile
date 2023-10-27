@@ -70,3 +70,5 @@ gem 'rails-i18n', '~> 6.0'
 gem "dockerfile-rails", ">= 1.2", :group => :development
 gem "redis", "~> 5.0"
 gem 'dotenv-rails'
+
+gem "tailwindcss-rails", "~> 2.0"
