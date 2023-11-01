@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ @import "tailwindcss/base";
+ @import "tailwindcss/components";
+ @import "tailwindcss/utilities";
  @import "top";
  @import "user_sessions";
  @import "bootstrap"; 
@@ -22,6 +25,12 @@
  @import 'fotter.scss';
  @import 'matches.scss';
  @import 'comments.scss';
+ @import "tailwind.css";
+ @import 'font-awesome';
+
+
+
+
  
  body {
     display: flex;
@@ -33,6 +42,58 @@
     }
   }
 
+  a.btn_07 {
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    width: 150px;
+    height: 40px;
+    margin: 10px auto;
+    padding: 10px  1px;
+    font-weight: bold;
+    color: #90ee90;
+    border-bottom: 2px solid #90ee90;
+    border-radius: 10px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, .3);
+    -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, .3);
+    transition: 0.5s;
+  }
+  a.btn_07:hover {
+    color: #fff;
+    background: #90ee90;
+    border-bottom: 2px solid #fff;
+    transform: translateY(3px);
+  }
+ 
+  .back-ground {
+    background-color: #fff8dc;
+  }
+
+  .header {
+    background-color: #87ceeb;
+  }
+  
+  .fotter {
+    background-color: #87ceeb;
+  }
+
+  h1 {
+    font-family: 'Arial', sans-serif; /* フォントの指定 */
+    color: #333; /* テキストの色 */
+    background-color: #f7f7f7; /* 背景色 */
+    padding: 20px; /* 内側の余白 */
+    border-radius: 10px; /* 角丸 */
+    text-align: center; /* 中央寄せ */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ドロップシャドウ */
+  }
+  
+  h1:hover {
+    background-color: #ddd; /* ホバー時の背景色 */
+  }
+  
+  /* 必要に応じて他のスタイルを追加してください */
+  
 //   .player {
 //     display: flex; 
 //     flex-flow: column;

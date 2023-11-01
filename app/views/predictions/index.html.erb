@@ -38,7 +38,9 @@
 <%
 =end%>
 
-<% @predictions.each do |prediction| %>
+<%
+=begin%>
+ <% @predictions.each do |prediction| %>
   <h2>試合予想投稿詳細</h2>
 
   <%= link_to '予想詳細', match_prediction_path(@match, prediction) %>
@@ -49,8 +51,75 @@
   <p>予想敗者: <%= prediction.predicted_loser %></p>
   <p>引き分け: <%= prediction.draw%></p>
   <p>コメント: <%= prediction.comment %></p>
+<% end %>  
+<%
+=end%>
+  <%
+=begin%>
+ <% @predictions.each do |prediction| %>
+    <h2>試合予想投稿詳細</h2>
+
+      <%= link_to '予想詳細', match_prediction_path(@match, prediction), class: "button" %>
+      
+      <h3>投稿内容</h3>
+        <table>
+          <tr>
+            <th>ホームチームの得点: <%= prediction.home_score %></th>
+            <th>アウェイチームの得点: <%= prediction.away_score %></th>
+            <th>予想勝者: <%= prediction.predicted_winner %></th>
+            <th>予想敗者: <%= prediction.predicted_loser %></th>
+            <th>引き分け: <%= prediction.draw %></th>
+            <th>コメント: <%= prediction.comment %></th>
+          </tr>
+  <% end %> 
+<%
+=end%>
+<%
+=begin%>
+ <h2>予想投稿詳細</h2>
+<% @predictions.each do |prediction| %>
+  <div class="prediction-details">
+
+    <%= link_to '予想詳細', match_prediction_path(@match, prediction), class: "btn_07" %>
+      
+    <h3>投稿内容</h3>
+    <table>
+      <tr>
+        <th>ホームチームの得点: <%= prediction.home_score %></th>
+        <th>アウェイチームの得点: <%= prediction.away_score %></th>
+        <th>予想勝者: <%= prediction.predicted_winner %></th>
+        <th>予想敗者: <%= prediction.predicted_loser %></th>
+        <th>引き分け: <%= prediction.draw %></th>
+        <th>コメント: <%= prediction.comment %></th>
+      </tr>
+    </table>
+  </div>
 <% end %> 
+<%
+=end%>
 
+<h1>予想投稿詳細</h1>
+<% @predictions.each do |prediction| %>
+  <div class="prediction-details">
 
-
-
+    <%= link_to '予想詳細', match_prediction_path(@match, prediction), class: "btn_07" %>
+      
+    <h3>投稿内容</h3>
+    <table>
+      <tr>
+        <td>ホームチームの得点: <%= prediction.home_score %></td>
+        <td>アウェイチームの得点: <%= prediction.away_score %></td>
+      </tr>
+      <tr>
+        <td>予想勝者: <%= prediction.predicted_winner %></td>
+        <td>予想敗者: <%= prediction.predicted_loser %></td>
+      </tr>
+      <tr>
+        <td>引き分け: <%= prediction.draw %></td>
+      </tr>
+      <tr>
+        <td>コメント: <%= prediction.comment %></td>
+      </tr>
+    </table>
+  </div>
+<% end %>

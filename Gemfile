@@ -56,7 +56,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'sorcery'
 gem 'bootstrap', '~> 4.3.1'
-gem "font-awesome-sass", "~> 6.4.0"
 gem 'jquery-rails'
 gem 'ransack'
 gem 'api_football_v3'
@@ -70,5 +69,7 @@ gem 'rails-i18n', '~> 6.0'
 gem "dockerfile-rails", ">= 1.2", :group => :development
 gem "redis", "~> 5.0"
 gem 'dotenv-rails'
-
 gem "tailwindcss-rails", "~> 2.0"
+gem "tailwindcss-rails", "~> 2.0"
+gem 'font-awesome-sass'
+
