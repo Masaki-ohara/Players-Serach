@@ -1,5 +1,5 @@
 <header>
-  <div class="container-fluid  bg-light">
+  <div class="container-fluid  header">
     <nav class="navbar navbar-expand-lg"> 
 
     <%= link_to root_path, class: 'navbar-brand' do %>
@@ -32,24 +32,28 @@
         <li class="nav-item nav-link">
           <%= link_to '新規登録', new_user_path %>
         </li>
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         試合日程作成
-        </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <%= link_to 'マッチメイク', new_match_path, class: 'dropdown-item' %>
-        <%= link_to '作成された試合一覧', matches_path, class: 'dropdown-item' %>
-      </div>
-      </li>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto main-nav align-items-center">
+            <li class="nav-item dropdown dropdown-slide">
+              <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              試合日程作成
+              </a>
         <%
 =begin%>
- <li class="nav-item nav-link">
-          <%= link_to 'マッチメイク', new_match_path class: 'dropdown-item' %>
-          <%= link_to '作成された試合一覧', matches_path class: 'dropdown-item' %>
-        </li>  
+ <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            試合日程作成
+          </a> 
 <%
 =end%>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'マッチメイク', new_match_path, class: 'dropdown-item' %>
+            <%= link_to '作成された試合一覧', matches_path, class: 'dropdown-item' %>
+          </div>
+        </li>
+      
+        
 
         <li class="nav-item nav-link">
           <% if logged_in? %>
@@ -62,4 +66,5 @@
       </ul>
     </div>
   </div>
-</header>
+</header> 
+ 

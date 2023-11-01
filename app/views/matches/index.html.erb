@@ -1,36 +1,31 @@
+<%
+=begin%>
+ <% content_for :page_specific_css do %>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>   
+<% end %> 
+<%
+=end%>
+
 <h1>試合カード一覧</h1>
 
 <% if @matches.present? %>
-  <div class="match-cards">
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
     <% @matches.each do |match| %>
-      <div class="match-card">
-        <p><%= match.date %> - 節: <%= match.round %> - リーグ: <%= match.league %> - <%= match.home_team_name %> vs <%= match.away_team_name %></p>
+      <div class="bg-white p-4 rounded shadow">
+        <p class="text-sm"><%= match.date %> - 節: <%= match.round %> - リーグ: <%= match.league %> - <%= match.home_team_name %> vs <%= match.away_team_name %></p>
 
-        <%= link_to '試合予想投稿', new_match_prediction_path(match) %>
-        <%
-=begin%>
- <% match.predictions.each do |prediction| %> 
-<%
-=end%>
-          <%= link_to '予想詳細', match_predictions_path(match) %>
-         <%
-=begin%>
- <% end %> 
-<%
-=end%>
+        <div class="mt-4 flex space-x-4">
+        <%= link_to '試合予想投稿', new_match_prediction_path(match), class: 'btn_07' %>
 
-        <% if current_user == match.user %>
-        <%= render 'menus', match: match %>
+          <% if current_user == match.user %>
+            <%= render 'menus', match: match %>
+          <% end %>
+        </div>
 
-        <%
-=begin%>
- <%= link_to '詳細', match_path(match) %> 
-<%
-=end%>
-        <% end %>
+        <%= link_to '予想詳細', match_predictions_path(match), class: 'btn_07' %>
       </div>
     <% end %>
   </div>
 <% else %>
-  <p>試合カードがまだ作成されていません。</p>
+  <p class="text-gray-700">試合カードがまだ作成されていません。</p>
 <% end %>
