@@ -45,6 +45,7 @@ class PredictionsController < ApplicationController
   def index
     @match = Match.find(params[:match_id])
     @predictions = @match.predictions
+    @predictions= @match.predictions.all.page(params[:page]).per(3)
     # @predictions = Match.Prediction.all
   end
 
@@ -125,8 +126,9 @@ class PredictionsController < ApplicationController
   private
 
   def prediction_params
-    params.require(:prediction).permit(:match_id, :user_id, :home_score, :away_score, :predicted_winner, :predicted_loser, :draw, :comment).merge(:content)
+    params.require(:prediction).permit(:match_id, :user_id, :home_score, :away_score, :predicted_winner, :predicted_loser, :draw, :comment)
   end
+  
 
   def set_prediction
     @prediction = Prediction.find(params[:id])

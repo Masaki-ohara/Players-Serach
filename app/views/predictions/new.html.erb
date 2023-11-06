@@ -1,3 +1,8 @@
+  <h1>試合内容</h1>
+    <p>試合日: <%= @prediction.match.date %></p>
+    <p>ホームチーム: <%= @prediction.match.home_team_name %></p>
+    <p>アウェイチーム: <%= @prediction.match.away_team_name %></p>
+
 
 <%= form_with model: @prediction, url: match_predictions_path(@match), method: :post, local: true do |f| %>
   <div class="form-group">
@@ -6,12 +11,12 @@
 
     <div class="row mb-3">
       <div class="col">
-        <%= f.label :home_score, "ホームスコア", class: "form-label" %>
+        <%= f.label :home_score, "ホームチームスコア", class: "form-label" %>
         <%= f.number_field :home_score, class: "form-control" %>
       </div>
 
       <div class="col">
-        <%= f.label :away_score, "アウェースコア", class: "form-label" %>
+        <%= f.label :away_score, "アウェーチームースコア", class: "form-label" %>
         <%= f.number_field :away_score, class: "form-control" %>
       </div>
     </div>
@@ -20,9 +25,8 @@
       <%= f.label :draw, class: "form-check-label" do %>
         <%= f.check_box :draw, id: "checker", class: "form-check-input" %> 引き分け
       <% end %>
-    </div>
+    </div> 
 
-    <div class="mb-3">
       <%
 =begin%>
  <%= f.label :predicted_winner, "勝利チーム", class: "form-label" %>
@@ -35,7 +39,8 @@
     </div> 
 <%
 =end%>
-<div class="mb-3">
+
+ <div class="mb-3">
   <%= f.label :predicted_winner, "勝利チーム", class: "form-label" %>
   <%= f.select :predicted_winner, @prediction_match, {}, { id: 'textinput', class: 'form-control' } %>
 </div>
@@ -75,4 +80,4 @@ checker.addEventListener('change', function() {
   }
 });
 
-</script>
+</script> 

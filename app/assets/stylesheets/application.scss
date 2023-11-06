@@ -91,6 +91,34 @@
   h1:hover {
     background-color: #ddd; /* ホバー時の背景色 */
   }
+
+  .pagination>li>a {          
+    border: none;     
+    color: #696969;   
+  }
+  
+  .pagination>.active>a {     
+    background: #93c9ff;     
+    border-radius: 15px;     
+  }
+  
+  .pagination>li>a:hover {        
+    border-radius: 15px;   
+  }
+  
+  .pagination {
+    justify-content: center;
+  }
+
+  .form-group {
+    max-width: 900px; /* 例: フォームの最大幅を指定 */
+    margin: 0 auto; /* 水平方向に中央に配置 */
+  }
+  
+
+
+  
+    
   
   /* 必要に応じて他のスタイルを追加してください */
   
