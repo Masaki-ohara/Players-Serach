@@ -12,5 +12,13 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード(確認用)'
+      comment:
+        content: 'コメント'
+      match:
+        home_team_name: 'ホームチーム'
+        away_team_name: 'アウェーチーム'
+        date: '日付'
+        round: '節'
+        league: 'リーグ名'
 
 

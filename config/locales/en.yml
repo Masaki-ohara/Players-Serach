@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  views:
+    pagination:
+      bootstrap-5:
+        previous: "前へ"
+        next: "次へ"
+        last: "最"
+        truncate: "..."

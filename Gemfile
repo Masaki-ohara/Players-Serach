@@ -72,4 +72,4 @@ gem 'dotenv-rails'
 gem "tailwindcss-rails", "~> 2.0"
 gem "tailwindcss-rails", "~> 2.0"
 gem 'font-awesome-sass'
-
+gem 'bootstrap5-kaminari-views', '~> 0.0.1'

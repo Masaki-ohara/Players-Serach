@@ -21,6 +21,7 @@ class MatchesController < ApplicationController
       @matches = Match.all
       @prediction = Prediction.new
       @predictions = Prediction.includes(:user).where(match_id: @matches.pluck(:id)).order(created_at: :desc)
+      @matches = Match.all.page(params[:page]).per(3)
     end
     
 

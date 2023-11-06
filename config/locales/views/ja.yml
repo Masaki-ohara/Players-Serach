@@ -10,3 +10,10 @@ ja:
       player_name: 'プレイヤー名'
       season: '西暦'
       league: 'リーグ名'
+  views:
+    pagination:
+      first: "最初"
+      last: "最後"
+      next: "次へ"
+      previous: "前へ"
+
