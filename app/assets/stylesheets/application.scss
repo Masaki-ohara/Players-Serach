@@ -79,18 +79,26 @@
   }
 
   h1 {
-    font-family: 'Arial', sans-serif; /* フォントの指定 */
-    color: #333; /* テキストの色 */
-    background-color: #f7f7f7; /* 背景色 */
-    padding: 20px; /* 内側の余白 */
-    border-radius: 10px; /* 角丸 */
-    text-align: center; /* 中央寄せ */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ドロップシャドウ */
+    margin:  0;             /* デフォルトCSS打ち消し */
+    font-size:  24px;       /* 文字サイズ指定 */
+    border-bottom:  solid;  /* 線指定 */
+    padding-bottom:  5px;   /* 余白指定 */
+    margin-bottom: 15px;    /* 周りの余白指定 */
   }
   
-  h1:hover {
-    background-color: #ddd; /* ホバー時の背景色 */
-  }
+  // h1 {
+  //   font-family: 'Arial', sans-serif; /* フォントの指定 */
+  //   color: #333; /* テキストの色 */
+  //   background-color: #f7f7f7; /* 背景色 */
+  //   padding: 20px; /* 内側の余白 */
+  //   border-radius: 10px; /* 角丸 */
+  //   text-align: center; /* 中央寄せ */
+  //   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ドロップシャドウ */
+  // }
+  
+  // h1:hover {
+  //   background-color: #ddd; /* ホバー時の背景色 */
+  // }
 
   .pagination>li>a {          
     border: none;     

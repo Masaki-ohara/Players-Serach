@@ -21,7 +21,7 @@ class PlayersController < ApplicationController
   
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'api-football-v1.p.rapidapi.com'
-    request["x-rapidapi-key"] = 'd303e74938msh00c29368f24eabcp1dc98djsnc0b438abb423'
+    request["x-rapidapi-key"] = ENV['API_KEY']
     
     response = http.request(request)
     puts response.read_body
@@ -62,9 +62,11 @@ class PlayersController < ApplicationController
       flash[:danger] = "プレイヤー情報が存在しません."
       redirect_to search_players_path
     end
-   else
-    #redirect_to search_players_path
-  end
+    else
+      flash[:danger] = []
+      flash[:danger] = @player.errors.full_messages.join('・')
+      redirect_to search_players_path
+    end
   end
 
   def search
@@ -84,7 +86,7 @@ class PlayersController < ApplicationController
   
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'api-football-v1.p.rapidapi.com'
-    request["x-rapidapi-key"] = 'd303e74938msh00c29368f24eabcp1dc98djsnc0b438abb423'
+    request["x-rapidapi-key"] = ENV['API_KEY']
     
     response = http.request(request)
     puts response.read_body

@@ -97,9 +97,22 @@
 <% end %> 
 <%
 =end%>
+<h1>試合内容</h1>
+  <table>
+  <tr>
+    <td>試合日: <%= @match.date %></td>
+  </tr>
+  <tr>
+    <td>ホームチーム: <%= @match.home_team_name %></td>
+  </tr>
+  <tr>
+    <td>アウェイチーム: <%= @match.away_team_name %></td>
+  </tr>
+</table>
 
 <h1>予想投稿詳細</h1>
 <% @predictions.each do |prediction| %>
+
   <div class="prediction-details">
 
     <%= link_to '予想詳細', match_prediction_path(@match, prediction), class: "btn_07" %>
@@ -110,10 +123,12 @@
         <td>ホームチームの得点: <%= prediction.home_score %></td>
         <td>アウェイチームの得点: <%= prediction.away_score %></td>
       </tr>
+    <% if prediction.draw != "⚪︎" && prediction.draw.to_i != 1 %>
       <tr>
         <td>予想勝者: <%= prediction.predicted_winner %></td>
         <td>予想敗者: <%= prediction.predicted_loser %></td>
       </tr>
+    <% end %>
       <tr>
         <td>引き分け: <%= prediction.draw %></td>
       </tr>

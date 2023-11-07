@@ -9,12 +9,17 @@
             <td><%= image_tag player[0]["player"]["photo"] %></td> 
             <td>プレイヤー名</td>
            <td><%= player[0]["player"]["lastname"] + player[0]["player"]["firstname"]%></td>
-          <%= form_with url: players_url, method: :get, local: true do |f| %>
-            <%= f.submit '選手詳細', class: 'btn btn-primary' %>
+          <%
+=begin%>
+ <%= form_with url: players_url, method: :get, local: true do |f| %>
             <%= f.hidden_field :league, value: player[0]["statistics"][0]["league"]["id"] %>
             <%= f.hidden_field :season, value: player[0]["statistics"][0]["league"]["season"] %>
             <%= f.hidden_field :player_name, value: player[0]["player"]["name"] %>
-          <% end %>
+            <%= f.submit '選手詳細', class: 'btn btn-primary' %>
+          <% end %>  
+<%
+=end%>
+          <%= link_to '選手詳細', players_path(league: player[0]["statistics"][0]["league"]["id"], season: player[0]["statistics"][0]["league"]["season"], player_name: player[0]["player"]["name"]), class: 'btn btn-primary' %>
           </table>
         </div>
       <% end %>

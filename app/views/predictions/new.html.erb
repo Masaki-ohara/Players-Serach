@@ -1,8 +1,15 @@
   <h1>試合内容</h1>
-    <p>試合日: <%= @prediction.match.date %></p>
-    <p>ホームチーム: <%= @prediction.match.home_team_name %></p>
-    <p>アウェイチーム: <%= @prediction.match.away_team_name %></p>
-
+    <table>
+      <tr>
+        <td>試合日: <%= @prediction.match.date %></p>
+      </tr>
+      <tr>
+        <td>ホームチーム: <%= @prediction.match.home_team_name %></td>
+      </tr>
+      <tr>
+        <td>アウェイチーム: <%= @prediction.match.away_team_name %></td>
+      </tr>
+    </table>
 
 <%= form_with model: @prediction, url: match_predictions_path(@match), method: :post, local: true do |f| %>
   <div class="form-group">
@@ -21,24 +28,11 @@
       </div>
     </div>
 
-    <div class="form-check form-switch mb-3">
-      <%= f.label :draw, class: "form-check-label" do %>
+      <div class="form-check form-switch mb-3">
+        <%= f.label :draw, class: "form-check-label" do %>
         <%= f.check_box :draw, id: "checker", class: "form-check-input" %> 引き分け
       <% end %>
     </div> 
-
-      <%
-=begin%>
- <%= f.label :predicted_winner, "勝利チーム", class: "form-label" %>
-      <%= f.select :predicted_winner,  @prediction_match, { id: 'textinput', class: 'form-control' } %>
-    </div>
-
-    <div class="mb-3">
-      <%= f.label :predicted_loser, "敗者チーム", class: "form-label" %>
-      <%= f.select :predicted_loser, @prediction_match, {id: "loseinput", class: "form-control" } %>
-    </div> 
-<%
-=end%>
 
  <div class="mb-3">
   <%= f.label :predicted_winner, "勝利チーム", class: "form-label" %>
@@ -48,8 +42,7 @@
 <div class="mb-3">
   <%= f.label :predicted_loser, "敗者チーム", class: "form-label" %>
   <%= f.select :predicted_loser, @prediction_match, {}, { id: "loseinput", class: "form-control" } %>
-</div>
-
+</div> 
 
     <div class="mb-3">
       <%= f.label :comment, "コメント", class: "form-label" %>
@@ -62,7 +55,7 @@
 
 <%= link_to '戻る', matches_path, class: 'btn btn-secondary mt-3' %>
 
-<script>
+ <script>
 const checker = document.getElementById('checker');
 const textinput = document.getElementById('textinput');
 const loseinput = document.getElementById('loseinput');
@@ -80,4 +73,4 @@ checker.addEventListener('change', function() {
   }
 });
 
-</script> 
+</script>  
