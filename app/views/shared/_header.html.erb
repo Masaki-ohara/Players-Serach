@@ -14,7 +14,7 @@
       <ul class="navbar-nav ml-auto main-nav align-items-center">
         <li class="nav-item dropdown dropdown-slide">
           <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            サッカー選手
+             <i class="fas fa-futbol"></i>サッカー選手
           </a>
           
           <div class="player_favorite">
@@ -26,10 +26,12 @@
         </li>
 
         <li class="nav-item nav-link">
+          <i class="fas fa-futbol"></i> 
           <%= link_to '各リーグ試合情報', games_search_path %>
         </li>
 
         <li class="nav-item nav-link">
+          <i class="fas fa-user-plus"></i>
           <%= link_to '新規登録', new_user_path %>
         </li>
         
@@ -37,7 +39,7 @@
           <ul class="navbar-nav ml-auto main-nav align-items-center">
             <li class="nav-item dropdown dropdown-slide">
               <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              試合日程作成
+              <i class="fas fa-calendar-alt mr-1"></i>試合日程作成
               </a>
         <%
 =begin%>
@@ -57,9 +59,11 @@
 
         <li class="nav-item nav-link">
           <% if logged_in? %>
+            <i class="fas fa-sign-in-alt"></i> 
             <%= link_to 'ログアウト', logout_path, method: :delete %>
           <% else %>
-        <%= link_to 'ログイン', login_url %>
+            <i class="fas fa-sign-in-alt"></i> 
+            <%= link_to 'ログイン', login_url %>
         <% end %> 
        </li>
        </div>

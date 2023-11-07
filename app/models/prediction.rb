@@ -99,6 +99,16 @@ class Prediction < ApplicationRecord
   # カスタムバリデーション
   validate :test
 
+  before_save :set_predictions
+  
+  def set_predictions
+    if draw == "1"
+      self.draw = "⚪︎"
+    else
+      self.draw = "✖️"
+    end
+  end
+
   def test
     if draw == "1"
       if home_score != away_score
