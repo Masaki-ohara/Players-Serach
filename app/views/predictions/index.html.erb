@@ -97,8 +97,9 @@
 <% end %> 
 <%
 =end%>
-<h1>試合内容</h1>
-  <table>
+
+<h1 class="mt-4">試合内容</h1>
+<table>
   <tr>
     <td>試合日: <%= @match.date %></td>
   </tr>
@@ -110,34 +111,35 @@
   </tr>
 </table>
 
-<h1>予想投稿詳細</h1>
-<% @predictions.each do |prediction| %>
+<h1 class="mt-4">予想投稿詳細</h1>
 
-  <div class="prediction-details">
+<% if @predictions.any? %>
+  <% @predictions.each do |prediction| %>
+    <div class="prediction-details">
+      <%= link_to 'コメントフォーム', match_prediction_path(@match, prediction), class: "btn_07" %>
+      <h3 class="mt-3">投稿内容</h3>
+      <table>
+        <tr>
+          <td>ホームチームの得点: <%= prediction.home_score %></td>
+          <td>アウェイチームの得点: <%= prediction.away_score %></td>
+        </tr>
+        <% if prediction.draw != "⚪︎" && prediction.draw.to_i != 1 %>
+          <tr>
+            <td>予想勝者: <%= prediction.predicted_winner %></td>
+            <td>予想敗者: <%= prediction.predicted_loser %></td>
+          </tr>
+        <% end %>
+        <tr>
+          <td>引き分け: <%= prediction.draw %></td>
+        </tr>
+        <tr>
+          <td>コメント: <%= prediction.comment %></td>
+        </tr>
+      </table>
+    </div>
+  <% end %>
 
-    <%= link_to '予想詳細', match_prediction_path(@match, prediction), class: "btn_07" %>
-      
-    <h3>投稿内容</h3>
-    <table>
-      <tr>
-        <td>ホームチームの得点: <%= prediction.home_score %></td>
-        <td>アウェイチームの得点: <%= prediction.away_score %></td>
-      </tr>
-    <% if prediction.draw != "⚪︎" && prediction.draw.to_i != 1 %>
-      <tr>
-        <td>予想勝者: <%= prediction.predicted_winner %></td>
-        <td>予想敗者: <%= prediction.predicted_loser %></td>
-      </tr>
-    <% end %>
-      <tr>
-        <td>引き分け: <%= prediction.draw %></td>
-      </tr>
-      <tr>
-        <td>コメント: <%= prediction.comment %></td>
-      </tr>
-    </table>
-  </div>
+  <%= paginate @predictions, theme: 'bootstrap-5' %>
+<% else %>
+  <p class="no-predictions mt-4">予想投稿がまだありません。</p>
 <% end %>
-
-<%= paginate @predictions, theme: 'bootstrap-5' %>
-
