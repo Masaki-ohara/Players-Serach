@@ -112,7 +112,7 @@ class Prediction < ApplicationRecord
   def test
     if draw == "1"
       if home_score != away_score
-        errors.add(:base, 'スコアが一致していません')
+        errors.add(:base, 'スコアを同点にしてください')
       end
     else
       if predicted_winner.present? && predicted_loser.present? && predicted_winner == predicted_loser
