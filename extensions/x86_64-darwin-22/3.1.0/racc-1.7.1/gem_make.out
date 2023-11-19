@@ -1,0 +1,18 @@
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/racc-1.7.1/ext/racc/cparse
+/Users/oharamasaki/.rbenv/versions/3.1.2/bin/ruby -I /Users/oharamasaki/.rbenv/versions/3.1.2/lib/ruby/site_ruby/3.1.0 -r ./siteconf20231114-42642-uc6dp9.rb extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= clean
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\=
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+ld: warning: -multiply_defined is obsolete
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= install
+/usr/local/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20231114-42642-mcytvt/racc

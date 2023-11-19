@@ -13,9 +13,6 @@
  *= require_tree .
  *= require_self
  */
- @import "tailwindcss/base";
- @import "tailwindcss/components";
- @import "tailwindcss/utilities";
  @import "top";
  @import "user_sessions";
  @import "bootstrap"; 
@@ -25,11 +22,7 @@
  @import 'fotter.scss';
  @import 'matches.scss';
  @import 'comments.scss';
- @import "tailwind.css";
  @import 'font-awesome';
-
-
-
 
  
  body {

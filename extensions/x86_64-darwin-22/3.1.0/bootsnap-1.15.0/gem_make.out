@@ -1,0 +1,16 @@
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/bootsnap-1.15.0/ext/bootsnap
+/Users/oharamasaki/.rbenv/versions/3.1.2/bin/ruby -I /Users/oharamasaki/.rbenv/versions/3.1.2/lib/ruby/site_ruby/3.1.0 -r ./siteconf20231114-42642-8v6nt.rb extconf.rb
+creating Makefile
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/bootsnap-1.15.0/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/bootsnap-1.15.0/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+ld: warning: -multiply_defined is obsolete
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/bootsnap-1.15.0/ext/bootsnap
+make DESTDIR\= install
+/usr/local/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20231114-42642-g9zq2n/bootsnap

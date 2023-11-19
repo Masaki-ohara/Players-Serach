@@ -17,11 +17,14 @@ ActiveRecord::Schema.define(version: 2023_10_20_160653) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
-    t.integer "user_id"
-    t.integer "match_id"
-    t.integer "prediction_id"
+    t.bigint "user_id", null: false
+    t.bigint "prediction_id", null: false
+    t.bigint "match_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["match_id"], name: "index_comments_on_match_id"
+    t.index ["prediction_id"], name: "index_comments_on_prediction_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -30,7 +33,6 @@ ActiveRecord::Schema.define(version: 2023_10_20_160653) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "season"
-    t.integer "league"
   end
 
   create_table "games", force: :cascade do |t|
@@ -66,18 +68,16 @@ ActiveRecord::Schema.define(version: 2023_10_20_160653) do
   end
 
   create_table "predictions", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.integer "user_id"
     t.integer "match_id"
-    t.string "predicted_result"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "predicted_winner"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "home_score"
     t.integer "away_score"
     t.string "predicted_loser"
-    t.string "predicted_winner"
     t.string "comment"
     t.string "draw"
-    t.index ["user_id"], name: "index_predictions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -90,7 +90,9 @@ ActiveRecord::Schema.define(version: 2023_10_20_160653) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "comments", "matches"
+  add_foreign_key "comments", "predictions"
+  add_foreign_key "comments", "users"
   add_foreign_key "matches", "users"
   add_foreign_key "players", "users"
-  add_foreign_key "predictions", "users"
 end
