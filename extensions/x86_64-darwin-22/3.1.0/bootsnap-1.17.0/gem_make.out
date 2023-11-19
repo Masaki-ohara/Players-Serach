@@ -1,0 +1,20 @@
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/bootsnap-1.17.0/ext/bootsnap
+/Users/oharamasaki/.rbenv/versions/3.1.2/bin/ruby -I /Users/oharamasaki/.rbenv/versions/3.1.2/lib/ruby/site_ruby/3.1.0 -r ./siteconf20231114-54825-epbass.rb extconf.rb
+creating Makefile
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/bootsnap-1.17.0/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/bootsnap-1.17.0/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+bootsnap.c:822:10: warning: unused variable 'contents' [-Wunused-variable]
+  char * contents = NULL;
+         ^
+1 warning generated.
+linking shared-object bootsnap/bootsnap.bundle
+ld: warning: -multiply_defined is obsolete
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/bootsnap-1.17.0/ext/bootsnap
+make DESTDIR\= install
+/usr/local/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20231114-54825-spsdlx/bootsnap

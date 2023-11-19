@@ -1,0 +1,16 @@
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/bindex-0.8.1/ext/skiptrace
+/Users/oharamasaki/.rbenv/versions/3.1.2/bin/ruby -I /Users/oharamasaki/.rbenv/versions/3.1.2/lib/ruby/site_ruby/3.1.0 -r ./siteconf20231114-42642-yso7wm.rb extconf.rb
+creating Makefile
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+ld: warning: -multiply_defined is obsolete
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/local/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20231114-42642-qrwv7s/skiptrace/internal

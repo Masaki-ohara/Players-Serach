@@ -1,0 +1,136 @@
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c
+/Users/oharamasaki/.rbenv/versions/3.1.2/bin/ruby -I /Users/oharamasaki/.rbenv/versions/3.1.2/lib/ruby/site_ruby/3.1.0 -r ./siteconf20231114-54825-e5w2wk.rb extconf.rb
+checking for ffi_prep_closure_loc() in -lffi... no
+checking for ffi_prep_closure_loc() in -llibffi... no
+checking for ffi_prep_closure_loc() in -llibffi-8... no
+checking for whether -Wl,--exclude-libs,ALL is accepted as LDFLAGS... no
+checking for rb_gc_mark_movable()... yes
+checking for whether -pthread is accepted as LDFLAGS... yes
+creating extconf.h
+creating Makefile
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c
+make DESTDIR\= clean
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c
+make DESTDIR\=
+Configuring libffi
+clang: error: unsupported option '-print-multi-os-directory'
+clang: error: no input files
+cd "/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi-x86_64-darwin22" && /Applications/Xcode.app/Contents/Developer/usr/bin/make
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  all-recursive
+Making all in include
+make[3]: Nothing to be done for `all'.
+Making all in testsuite
+make[3]: Nothing to be done for `all'.
+Making all in man
+make[3]: Nothing to be done for `all'.
+/bin/sh ./libtool  --tag=CC   --mode=compile clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi  -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src   -Wall  -fexceptions -c -o src/prep_cif.lo /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/prep_cif.c
+libtool: compile:  clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src -Wall -fexceptions -c /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/prep_cif.c  -fno-common -DPIC -o src/prep_cif.o
+/bin/sh ./libtool  --tag=CC   --mode=compile clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi  -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src   -Wall  -fexceptions -c -o src/types.lo /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/types.c
+libtool: compile:  clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src -Wall -fexceptions -c /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/types.c  -fno-common -DPIC -o src/types.o
+/bin/sh ./libtool  --tag=CC   --mode=compile clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi  -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src   -Wall  -fexceptions -c -o src/raw_api.lo /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/raw_api.c
+libtool: compile:  clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src -Wall -fexceptions -c /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/raw_api.c  -fno-common -DPIC -o src/raw_api.o
+/bin/sh ./libtool  --tag=CC   --mode=compile clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi  -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src   -Wall  -fexceptions -c -o src/java_raw_api.lo /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/java_raw_api.c
+libtool: compile:  clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src -Wall -fexceptions -c /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/java_raw_api.c  -fno-common -DPIC -o src/java_raw_api.o
+/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/java_raw_api.c:328:46: warning: 'ffi_java_raw_size' is deprecated [-Wdeprecated-declarations]
+  ffi_java_raw *raw = (ffi_java_raw*)alloca (ffi_java_raw_size (cif));
+                                             ^
+include/ffi.h:324:56: note: 'ffi_java_raw_size' has been explicitly marked deprecated here
+size_t ffi_java_raw_size (ffi_cif *cif) __attribute__((deprecated));
+                                                       ^
+/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/java_raw_api.c:331:3: warning: 'ffi_java_ptrarray_to_raw' is deprecated [-Wdeprecated-declarations]
+  ffi_java_ptrarray_to_raw (cif, avalue, raw);
+  ^
+include/ffi.h:320:93: note: 'ffi_java_ptrarray_to_raw' has been explicitly marked deprecated here
+void ffi_java_ptrarray_to_raw (ffi_cif *cif, void **args, ffi_java_raw *raw) __attribute__((deprecated));
+                                                                                            ^
+2 warnings generated.
+/bin/sh ./libtool  --tag=CC   --mode=compile clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi  -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src   -Wall  -fexceptions -c -o src/closures.lo /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/closures.c
+libtool: compile:  clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src -Wall -fexceptions -c /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/closures.c  -fno-common -DPIC -o src/closures.o
+In file included from /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/closures.c:572:
+/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/dlmalloc.c:3390:7: warning: variable 'nfences' set but not used [-Wunused-but-set-variable]
+  int nfences = 0;
+      ^
+1 warning generated.
+/bin/sh ./libtool  --tag=CC   --mode=compile clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi  -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src   -Wall  -fexceptions -c -o src/tramp.lo /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/tramp.c
+libtool: compile:  clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src -Wall -fexceptions -c /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/tramp.c  -fno-common -DPIC -o src/tramp.o
+/bin/sh ./libtool  --tag=CC   --mode=compile clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi  -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src   -Wall  -fexceptions -c -o src/x86/ffi64.lo /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/x86/ffi64.c
+libtool: compile:  clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src -Wall -fexceptions -c /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/x86/ffi64.c  -fno-common -DPIC -o src/x86/ffi64.o
+/bin/sh ./libtool  --tag=CC   --mode=compile clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi  -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src  -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src  -c -o src/x86/unix64.lo /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/x86/unix64.S
+libtool: compile:  clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src -c /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/x86/unix64.S  -fno-common -DPIC -o src/x86/unix64.o
+/bin/sh ./libtool  --tag=CC   --mode=compile clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi  -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src   -Wall  -fexceptions -c -o src/x86/ffiw64.lo /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/x86/ffiw64.c
+libtool: compile:  clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src -Wall -fexceptions -c /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/x86/ffiw64.c  -fno-common -DPIC -o src/x86/ffiw64.o
+/bin/sh ./libtool  --tag=CC   --mode=compile clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi  -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src  -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src  -c -o src/x86/win64.lo /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/x86/win64.S
+libtool: compile:  clang -DHAVE_CONFIG_H -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src -I. -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/include -Iinclude -I/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src -c /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/src/x86/win64.S  -fno-common -DPIC -o src/x86/win64.o
+/bin/sh ./libtool  --tag=CC   --mode=link clang  -Wall  -fexceptions   -o libffi_convenience.la  src/prep_cif.lo src/types.lo src/raw_api.lo src/java_raw_api.lo src/closures.lo src/tramp.lo   src/x86/ffi64.lo src/x86/unix64.lo src/x86/ffiw64.lo src/x86/win64.lo 
+libtool: link: ar cr .libs/libffi_convenience.a  src/prep_cif.o src/types.o src/raw_api.o src/java_raw_api.o src/closures.o src/tramp.o src/x86/ffi64.o src/x86/unix64.o src/x86/ffiw64.o src/x86/win64.o
+libtool: link: ranlib .libs/libffi_convenience.a
+libtool: link: ( cd ".libs" && rm -f "libffi_convenience.la" && ln -s "../libffi_convenience.la" "libffi_convenience.la" )
+/bin/sh ./libtool  --tag=CC   --mode=link clang  -Wall  -fexceptions -no-undefined -version-info `grep -v '^#' /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi/libtool-version`     -o libffi.la -rpath /usr/local/lib src/prep_cif.lo src/types.lo src/raw_api.lo src/java_raw_api.lo src/closures.lo src/tramp.lo  src/x86/ffi64.lo src/x86/unix64.lo src/x86/ffiw64.lo src/x86/win64.lo 
+libtool: link: ar cr .libs/libffi.a  src/prep_cif.o src/types.o src/raw_api.o src/java_raw_api.o src/closures.o src/tramp.o src/x86/ffi64.o src/x86/unix64.o src/x86/ffiw64.o src/x86/win64.o
+libtool: link: ranlib .libs/libffi.a
+libtool: link: ( cd ".libs" && rm -f "libffi.la" && ln -s "../libffi.la" "libffi.la" )
+compiling AbstractMemory.c
+compiling ArrayType.c
+compiling Buffer.c
+compiling Call.c
+compiling ClosurePool.c
+compiling DynamicLibrary.c
+compiling Function.c
+compiling FunctionInfo.c
+compiling LastError.c
+compiling LongDouble.c
+compiling MappedType.c
+compiling MemoryPointer.c
+compiling MethodHandle.c
+compiling Platform.c
+compiling Pointer.c
+compiling Struct.c
+compiling StructByValue.c
+compiling StructLayout.c
+compiling Thread.c
+compiling Type.c
+compiling Types.c
+compiling Variadic.c
+compiling ffi.c
+linking shared-object ffi_c.bundle
+ld: warning: -multiply_defined is obsolete
+
+current directory: /Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c
+make DESTDIR\= install
+cd "/Users/oharamasaki/workspace/Players-Serach/gems/ffi-1.16.3/ext/ffi_c/libffi-x86_64-darwin22" && /Applications/Xcode.app/Contents/Developer/usr/bin/make
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  all-recursive
+Making all in include
+make[3]: Nothing to be done for `all'.
+Making all in testsuite
+make[3]: Nothing to be done for `all'.
+Making all in man
+make[3]: Nothing to be done for `all'.
+make[3]: Nothing to be done for `all-am'.
+compiling AbstractMemory.c
+compiling ArrayType.c
+compiling Buffer.c
+compiling Call.c
+compiling ClosurePool.c
+compiling DynamicLibrary.c
+compiling Function.c
+compiling FunctionInfo.c
+compiling LastError.c
+compiling LongDouble.c
+compiling MappedType.c
+compiling MemoryPointer.c
+compiling MethodHandle.c
+compiling Platform.c
+compiling Pointer.c
+compiling Struct.c
+compiling StructByValue.c
+compiling StructLayout.c
+compiling Thread.c
+compiling Type.c
+compiling Types.c
+compiling Variadic.c
+compiling ffi.c
+linking shared-object ffi_c.bundle
+ld: warning: -multiply_defined is obsolete
+/usr/local/bin/ginstall -c -m 0755 ffi_c.bundle ./.gem.20231114-54825-3ge6s7
