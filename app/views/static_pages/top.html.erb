@@ -209,11 +209,14 @@
 </main> 
 <%
 =end%>
-<main role="main">
+
+ <%
+=begin%>
+ <main role="main">
   <div class="top-wrapper bg-white text-dark text-center py-5">
     <h1 class="mb-4 text-primary">Players Search</h1>
 
-    <div class="container-fluid">
+    <div class="container">
 
       <div class="row">
         <div class="col-lg-4 mb-4">
@@ -226,7 +229,7 @@
           <%= link_to '選手を検索する', search_players_path, class: 'shadow btn btn-success mt-2' %>
         </div>
         <div class="col-lg-4 mb-4">
-          <%= image_tag asset_path("stadium.jpg"), class: "mx-auto d-block mb-3", width: '80%', height: '80%' %>
+          <%= image_tag asset_path("stadium.jpg"), class: "mx-auto d-block mb-3", width: '60%', height: '50%' %>
           <h2 class="text-primary">試合情報を検索しよう</h2>
           <p class="text-muted">
             好きなリーグや好きなチームのスケジュールを検索できます。
@@ -235,7 +238,7 @@
           <%= link_to '試合情報を検索する', search_games_path, class: 'shadow btn btn-success mt-2' %>
         </div>
         <div class="col-lg-4 mb-4">
-          <%= image_tag asset_path("favorite.jpg"), class: "mx-auto d-block mb-3", width: '70%', height: '70%' %>
+          <%= image_tag asset_path("favorite.jpg"), class: "mx-auto d-block mb-3", width: '70%', height: '50%' %>
           <h2 class="text-primary">選手をお気に入り</h2>
           <p class="text-muted">
             ログインしてからお気に入りできます。
@@ -252,7 +255,7 @@
           <p class="text-muted">
             お好きな試合を選んでカードを作成しましょう。
           </p>
-          <%= link_to '試合カード作成', new_match_path, class: 'shadow btn btn-success mt-3' %>
+          <%= link_to '試合カード作成', new_match_path, class: 'shadow btn btn-success mt-2, mb-9' %>
         </div>
         <div class="col-lg-6 mb-4">
           <%= image_tag asset_path("stadium.jpg"), class: "mx-auto d-block mb-3", width: '80%', height: '80%' %>
@@ -260,9 +263,11 @@
           <p class="text-muted">
             お気に入りの選手の試合予想を作成しましょう。
           </p>
-          <%= link_to '試合予想作成フォーム', matches_path, class: 'shadow btn btn-success mt-3' %>
+          <%= link_to '試合予想作成フォーム', matches_path, class: 'shadow btn btn-success mt-2' %>
         </div>
-      </div>
+      </div>  
+<%
+=end%>
 
       <%
 =begin%>
@@ -286,6 +291,57 @@
 
       <!-- 他の featurette も同様の形式で続く -->
 
+<%
+=begin%>
+  
+    </div>
+  </div>
+</main>  
+<%
+=end%>
+<main role="main">
+  <div class="top-wrapper bg-white text-dark text-center py-5">
+    <h1 class="mb-4 text-primary">Players Search</h1>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <%= image_tag asset_path("person.jpg"), class: "mx-auto d-block mb-3 rounded-circle img-fluid", width: '50%', height: '50%' %>
+          <h2 class="text-primary">選手を検索しよう</h2>
+          <p>選手のシーズンのリーグ戦の結果を検索
+          <br>できます。
+          <br>シュート数、ゴール数、タックル数、試合出場数等が見れます。</p>
+          <%= link_to '選手を検索する', search_players_path, class: 'shadow btn btn-success mt-2' %>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <%= image_tag asset_path("stadium.jpg"), class: "mx-auto d-block mb-3 img-fluid", width: '80%', height: '80%' %>
+          <h2 class="text-primary">試合情報を検索しよう</h2>
+          <p>好きなリーグや好きなチームのスケジュールを検索できます。<br>リーグ戦の順位表が見れます。</p>
+          <%= link_to '試合情報を検索する', search_games_path, class: 'shadow btn btn-success mt-3' %>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <%= image_tag asset_path("favorite.jpg"), class: "mx-auto d-block mb-3 img-fluid", width: '70%', height: '50%' %>
+          <h2 class="text-primary">選手をお気に入り</h2>
+          <p>ログインしてから選手をお気に入りできます。<br>お気に入り一覧からいつでも見れます。</p>
+          <%= link_to 'お気に入り一覧', favorites_players_path, class: 'shadow btn btn-success mt-5' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <%= image_tag asset_path("stadium.jpg"), class: "mx-auto d-block mb-3 img-fluid", width: '80%', height: '80%' %>
+          <h2 class="text-primary">試合カード作成</h2>
+          <p class="text-muted">お好きな試合を選んでカードを作成しましょう。</p>
+          <%= link_to '試合カード作成', new_match_path, class: 'shadow btn btn-success mt-2 mb-9' %>
+        </div>
+        <div class="col-md-6 mb-4">
+          <%= image_tag asset_path("stadium.jpg"), class: "mx-auto d-block mb-3 img-fluid", width: '80%', height: '80%' %>
+          <h2 class="text-primary">試合予想作成フォーム</h2>
+          <p class="text-muted">お気に入りの選手の試合予想を作成しましょう。</p>
+          <%= link_to '試合予想作成フォーム', matches_path, class: 'shadow btn btn-success mt-2' %>
+        </div>
+      </div>
     </div>
   </div>
 </main>
