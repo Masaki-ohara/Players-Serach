@@ -48,7 +48,8 @@
 
 インフラ
 
-- fly.io
+- AWS 
+- EC2
 
 API
 
