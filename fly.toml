@@ -1,23 +1,30 @@
-# fly.toml app configuration file generated for players-search on 2023-11-14T21:00:34+09:00
+# fly.toml app configuration file generated for players-serach-lingering-smoke-5984 on 2024-10-07T21:37:30+09:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "players-search"
-primary_region = "nrt"
-console_command = "/rails/bin/rails console"
+app = 'players-serach-lingering-smoke-5984'
+primary_region = 'hkg'
+console_command = '/rails/bin/rails console'
 
 [build]
-  builder = "lively-forest-470"
-  image = "docker.io/library/ruby:3.1.2-slim"
+
+[deploy]
+  release_command = './bin/rails db:prepare'
 
 [http_service]
   internal_port = 3000
   force_https = true
-  auto_stop_machines = true
+  auto_stop_machines = 'stop'
   auto_start_machines = true
   min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
 
 [[statics]]
-  guest_path = "/rails/public"
-  url_prefix = "/"
+  guest_path = '$APP_PATH/public'
+  url_prefix = '/'

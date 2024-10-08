@@ -69,3 +69,4 @@ gem 'rails-i18n', '~> 6.0'
 gem "redis", "~> 5.0"
 gem 'font-awesome-sass'
 gem 'bootstrap5-kaminari-views', '~> 0.0.1'
+gem "dockerfile-rails", ">= 1.6", :group => :development

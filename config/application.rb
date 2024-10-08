@@ -41,5 +41,6 @@ module PlayersSerach
       config.i18n.default_locale = :ja
      config.generators.system_tests = nil
      config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
+     config.hosts << 'xxx.onrender.com'
   end
 end
