@@ -1,0 +1,22 @@
+databases:
+  - name: Players-Search-db
+    databaseName: players_search_db
+    user: Players-Search
+    region: singapore
+
+services:
+  - type: web
+    name: Players-Search
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: Players-Search
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+
