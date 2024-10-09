@@ -30,7 +30,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :test do
   gem 'capybara', '~> 3.23'
-  gem "selenium-webdriver" 
+  gem "selenium-webdriver"
 end
 
 group :development, :test do
