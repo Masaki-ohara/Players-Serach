@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: Players_Serach_development
+  database: Players-Search-db
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['PASSWORD'] %>
   host: <%= ENV['DB_HOST'] %>
@@ -64,7 +64,8 @@ test:
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['PASSWORD'] %>
   host: <%= ENV['DB_HOST'] %>
-  
+SELECT current_user;
+
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
