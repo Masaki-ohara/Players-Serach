@@ -64,7 +64,7 @@ test:
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['PASSWORD'] %>
   host: <%= ENV['DB_HOST'] %>
-SELECT current_user;
+# SELECT current_user;
 
 
 # As with config/credentials.yml, you never want to store sensitive information,
