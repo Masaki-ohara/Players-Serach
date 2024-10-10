@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: Players-Search-db
+  database: Players_Serach_development
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['PASSWORD'] %>
   host: <%= ENV['DB_HOST'] %>
