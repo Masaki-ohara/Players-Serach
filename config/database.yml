@@ -88,8 +88,16 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+# production:
+#   <<: *default
+#   database: Players_Serach_production
+#   username: Players_Serach
+#   password: <%= ENV['PLAYERS_SERACH_DATABASE_PASSWORD'] %>
 production:
-  <<: *default
-  database: Players_Serach_production
-  username: Players_Serach
-  password: <%= ENV['PLAYERS_SERACH_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host:　dpg-cs2io9m8ii6s739jac10-a
+  username: players_search_db_user
+  password: Pn5DcSnJmoj6EeXYvZW8skUWwBOFsHfw
+  database: Players-Search-db
