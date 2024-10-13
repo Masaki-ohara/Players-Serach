@@ -1,4 +1,5 @@
 FROM ruby:3.1.2
+FROM node:14
 
 RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
