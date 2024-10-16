@@ -1,12 +1,5 @@
 module.exports = {
-  plugins: [
-    require('postcss-import'),
-    require('postcss-flexbugs-fixes'),
-    require('postcss-preset-env')({
-      autoprefixer: {
-        flexbox: 'no-2009'
-      },
-      stage: 3
-    })
-  ]
-}
+  // Add you postcss configuration here
+  // Learn more about it at https://github.com/webpack-contrib/postcss-loader#config-files
+  plugins: [["autoprefixer"]],
+};
