@@ -12,14 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2023_10_20_160653) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "comments", force: :cascade do |t|
     t.text "content"
-    t.bigint "user_id", null: false
-    t.bigint "prediction_id", null: false
-    t.bigint "match_id", null: false
+    t.integer "user_id", null: false
+    t.integer "prediction_id", null: false
+    t.integer "match_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["match_id"], name: "index_comments_on_match_id"
@@ -45,7 +42,7 @@ ActiveRecord::Schema.define(version: 2023_10_20_160653) do
   create_table "matches", force: :cascade do |t|
     t.string "home_team_name"
     t.string "away_team_name"
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.date "date"
@@ -61,7 +58,7 @@ ActiveRecord::Schema.define(version: 2023_10_20_160653) do
     t.integer "age"
     t.integer "league", null: false
     t.string "image_url", null: false
-    t.bigint "user_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_players_on_user_id"

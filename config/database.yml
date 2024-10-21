@@ -15,7 +15,7 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: Players_Serach_development
+  database: db/development.sqlite3
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['PASSWORD'] %>
   host: <%= ENV['DB_HOST'] %>

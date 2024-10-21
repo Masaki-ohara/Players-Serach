@@ -37,3 +37,6 @@ yarn-debug.log*
 /.env
 /app/assets/builds/*
 !/app/assets/builds/.keep
+db/development.sqlite3
+Players_Serach_test
+Players_Serach_production
