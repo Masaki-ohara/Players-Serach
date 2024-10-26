@@ -1,214 +1,3 @@
-<%
-=begin%>
- <main role="main">
-<div class="top-wrapper ">
- <h1 class="text-center">players-search</h1>
-
-
-  <div class="container marketing"> 
-<%
-=end%>
-<%
-=begin%>
- <main role="main">
-  <div class="top-wrapper bg-primary text-white text-center py-5">
-    <h1 class="mb-4">players-search</h1>
-
-    <div class="container marketing">
-
-    <!-- Three columns of text below the carousel -->
-  <div class="row">
-      <div class="col-lg-4">
-      <%= image_tag asset_path("person.jpg"), class: "mx-auto", width: '40%', height: '40%' %>
-
-        <h2>選手を検索しよう</h2>
-        <p class="mb-0">
-        選手のシーズンのリーグ戦の結果を検索<br>
-        できます<br>
-        シュート数、ゴール数、タックル数、試合出場<br>
-        数等が見れます
-        </p>
-
-        <%= link_to '選手を検索する', search_players_path, class: 'btn btn-secondary btn-lg text-white' %>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-      <%= image_tag asset_path("stadium.jpg"), class: "mx-auto", width: '40%', height: '40%' %>
-
-        <h2>試合情報を検索しよう</h2>
-        <p>
-        好きなリーグや好きなチームのスケジュールを<br>
-        検索できます<br>
-        リーグ戦の順位表が見れます
-        </p>
-        <%= link_to '試合情報を検索する', search_games_path, class: 'btn btn-secondary btn-lg text-white' %>
-
-
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-      <%= image_tag asset_path("favorite.jpg"), width: '50%', height: '50%' %>
-
-        <h2>選手をお気に入り</h2>
-        <p>
-        ログインしてからお気に入りできます<br>
-        選手をお気に入りしよう<br>
-        お気に入り一覧からいつでも見れます
-        </p>
-        <%= link_to 'お気に入り一覧', favorites_players_path, class: 'btn btn-secondary btn-lg text-white' %>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-
-    <div class="row">
-      <div class="col-lg-6">
-            <%= image_tag asset_path("stadium.jpg"), width: '50%', height: '50%' %>
-        <h2>試合カード作成</h2>
-        <p>
-        お好きな試合を選んでカードを作成しましょう。
-        </p>
-        <%= link_to '試合カード作成', new_match_path, class: 'btn btn-secondary btn-lg text-white' %>
-      </div>
-
-      <div class="col-lg-6">
-      <%= image_tag asset_path("stadium.jpg"), width: '50%', height: '50%' %>
-        <h2>試合予想作成フォーム</h2>
-        <p>
-        お気に入りの選手の試合予想を作成しましょう。
-        </p>
-        <%= link_to '試合予想作成フォーム', matches_path, class: 'btn btn-secondary btn-lg text-white' %>
-      </div>
-    </div>
-
-    <!-- フィーチャーを開始 -->
-    <hr class="featurette-divider">
-    <h1 class="text-center">使い方</h1>
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal text-center">選手検索機能</h2>
-        <p class="lead text-center">
-          リーグ名とシーズンとプレイヤー名を入力して検索してください
-        </p>
-      </div>
-      <div class="col-md-5">
-        <%= image_tag 'top.jpg', width: "1000", height: "600", class: 'bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto'%>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal text-center">試合検索機能</h2>
-        <p class="lead text-center">
-          検索したいリーグとシーズンを入力して試合情報を検索してください
-        </p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <%= image_tag 'soccer_stadium.jpg', width: "1000", height: "600",  class: "img-fluid" %>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal text-center">お気に入り機能</h2>
-        <p class="lead text-center">
-         好きな選手をお気に入りしよう
-        </p>
-      </div>
-      <div class="col-md-5">
-        <%= image_tag 'favorites.jpg', width: "1000", height: "600", class: 'bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto'%>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <!-- /END THE FEATURETTES -->
-
-  </div><!-- /.container -->  
-<%
-=end%>
-<%
-=begin%>
- <main role="main">
-  <div class="top-wrapper bg-dark text-white text-center py-5">
-    <h1 class="mb-4">Players Search</h1>
-
-    <div class="container marketing">
-
-      <div class="row">
-        <div class="col-lg-4 mb-4">
-          <%= image_tag asset_path("person.jpg"), class: "mx-auto d-block mb-3", width: '50%', height: '50%' %>
-          <h2 class="text-warning">選手を検索しよう</h2>
-          <p class="text-muted">
-            選手のシーズンのリーグ戦の結果を検索できます。
-            シュート数、ゴール数、タックル数、試合出場数等が見れます。
-          </p>
-          <%= link_to '選手を検索する', search_players_path, class: 'btn btn-secondary mt-3' %>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <%= image_tag asset_path("stadium.jpg"), class: "mx-auto d-block mb-3", width: '80%', height: '80%' %>
-          <h2 class="text-warning">試合情報を検索しよう</h2>
-          <p class="text-muted">
-            好きなリーグや好きなチームのスケジュールを検索できます。
-            リーグ戦の順位表が見れます。
-          </p>
-          <%= link_to '試合情報を検索する', search_games_path, class: 'btn btn-secondary mt-4' %>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <%= image_tag asset_path("favorite.jpg"), class: "mx-auto d-block mb-3", width: '70%', height: '70%' %>
-          <h2 class="text-warning">選手をお気に入り</h2>
-          <p class="text-muted">
-            ログインしてからお気に入りできます。
-            選手をお気に入りしよう。お気に入り一覧からいつでも見れます。
-          </p>
-          <%= link_to 'お気に入り一覧', favorites_players_path, class: 'btn btn-secondary mt-3' %>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-6 mb-4">
-          <%= image_tag asset_path("stadium.jpg"), class: "mx-auto d-block mb-3", width: '80%', height: '80%' %>
-          <h2 class="text-warning">試合カード作成</h2>
-          <p class="text-muted">
-            お好きな試合を選んでカードを作成しましょう。
-          </p>
-          <%= link_to '試合カード作成', new_match_path, class: 'btn btn-secondary mt-3' %>
-        </div>
-        <div class="col-lg-6 mb-4">
-          <%= image_tag asset_path("stadium.jpg"), class: "mx-auto d-block mb-3", width: '80%', height: '80%' %>
-          <h2 class="text-warning">試合予想作成フォーム</h2>
-          <p class="text-muted">
-            お気に入りの選手の試合予想を作成しましょう。
-          </p>
-          <%= link_to '試合予想作成フォーム', matches_path, class: 'btn btn-secondary mt-3' %>
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-      <h1 class="text-warning text-center">使い方</h1>
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal text-warning text-center">選手検索機能</h2>
-          <p class="lead text-muted text-center">
-            リーグ名とシーズンとプレイヤー名を入力して検索してください。
-          </p>
-        </div>
-        <div class="col-md-5">
-          <%= image_tag 'top.jpg', width: "1000", height: "600", class: 'bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded'%>
-        </div>
-      </div>
-
-      <!-- 他の featurette も同様の形式で続く -->
-
-    </div>
-  </div>
-</main> 
-<%
-=end%>
 <main role="main">
   <div class="top-wrapper bg-white text-dark text-center py-5">
     <h1 class="mb-4 text-primary">Players Search</h1>
@@ -226,7 +15,7 @@
           <%= link_to '選手を検索する', search_players_path, class: 'shadow btn btn-success mt-2' %>
         </div>
         <div class="col-lg-4 mb-4">
-          <%= image_tag asset_path("stadium.jpg"), class: "mx-auto d-block mb-3", width: '80%', height: '80%' %>
+          <%= image_tag asset_path("stadium.jpg"), class: "mx-auto d-block mb-3", width: '50%', height: '50%' %>
           <h2 class="text-primary">試合情報を検索しよう</h2>
           <p class="text-muted">
             好きなリーグや好きなチームのスケジュールを検索できます。
@@ -235,7 +24,7 @@
           <%= link_to '試合情報を検索する', search_games_path, class: 'shadow btn btn-success mt-2' %>
         </div>
         <div class="col-lg-4 mb-4">
-          <%= image_tag asset_path("favorite.jpg"), class: "mx-auto d-block mb-3", width: '70%', height: '70%' %>
+          <%= image_tag asset_path("favorite.jpg"), class: "mx-auto d-block mb-3", width: '50%', height: '50%' %>
           <h2 class="text-primary">選手をお気に入り</h2>
           <p class="text-muted">
             ログインしてからお気に入りできます。
@@ -262,30 +51,7 @@
           </p>
           <%= link_to '試合予想作成フォーム', matches_path, class: 'shadow btn btn-success mt-3' %>
         </div>
-      </div>
-
-      <%
-=begin%>
- <hr class="featurette-divider">
-      <h1 class="text-primary text-center">使い方</h1>
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal text-primary text-center">選手検索機能</h2>
-          <p class="lead text-muted text-center">
-            リーグ名とシーズンとプレイヤー名を入力して検索してください。
-          </p>
-        </div>
-        <div class="col-md-5">
-          <%= image_tag 'top.jpg', width: "1000", height: "600", class: 'bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded'%>
-        </div>
-      </div> 
-<%
-=end%>
-
-      <!-- 他の featurette も同様の形式で続く -->
-
+      </div>      
     </div>
   </div>
 </main>
