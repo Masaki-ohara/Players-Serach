@@ -349,7 +349,7 @@ DEPENDENCIES
   net-imap
   net-pop
   net-smtp
-  pg (~> 1.1)
+  pg
   pry-rails
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)

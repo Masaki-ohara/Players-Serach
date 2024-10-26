@@ -91,3 +91,6 @@ production:
   database: Players_Serach_production
   username: Players_Serach
   password: <%= ENV['PLAYERS_SERACH_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5

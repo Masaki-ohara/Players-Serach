@@ -40,3 +40,4 @@ yarn-debug.log*
 db/development.sqlite3
 Players_Serach_test
 Players_Serach_production
+master.key
