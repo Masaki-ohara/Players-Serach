@@ -1,0 +1,23 @@
+# fly.toml app configuration file generated for players-search on 2023-11-14T21:00:34+09:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "players-search"
+primary_region = "nrt"
+console_command = "/rails/bin/rails console"
+
+[build]
+  builder = "lively-forest-470"
+  image = "docker.io/library/ruby:3.1.2-slim"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[statics]]
+  guest_path = "/rails/public"
+  url_prefix = "/"

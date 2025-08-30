@@ -1,6 +1,6 @@
 # Players-Serach
 [![Image from Gyazo](https://i.gyazo.com/09d0e3e3cab501334b21eca27197aa6a.png)](https://gyazo.com/09d0e3e3cab501334b21eca27197aa6a)
-サービスURL https://players-search.fly.dev/
+サービスURL https://players-search-3ffb12d06960.herokuapp.com/
 # サービス概要
 私はサッカーの試合を観るのが好きで相手の選手を分析したり、しています。
 そこで、相手の選手や好きな選手をいつでも情報を見れたり、試合情報を見れたら便利だなと思い開発しました。

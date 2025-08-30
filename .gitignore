@@ -41,3 +41,42 @@ db/development.sqlite3
 Players_Serach_test
 Players_Serach_production
 master.key
+/config/credentials/development.key
+# macOS / エディタ関連
+.DS_Store
+*.swp
+.idea/
+.vscode/
+*.class
+
+# 一時・キャッシュ系
+.bundle/
+node_modules/
+tmp/
+log/
+
+# 個人ディレクトリ系（ホームフォルダ直下の不要ファイル）
+/.Trash/
+/.android/
+/.atom/
+/.aws/
+/.bash_history
+.bash_profile
+.cache/
+.config/
+.docker/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# ビルド / クラスファイル
+*.class
+node_modules/
+tmp/
+log/
+
+# プロジェクト外のファイルを無視
+../../../../../workspace/
